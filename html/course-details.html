@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Talim.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/course_style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="home.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="#">Mentors</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-layout">
+        <div class="main-info-column">
+            <nav class="breadcrumb">
+                <a href="home.html">Home</a> &gt; <a href="courses.html">Courses</a> &gt; <span id="breadcrumb-current">AI & Machine Learning</span>
+            </nav>
+
+            <h1 id="course-title">AI & Machine Learning Fundamentals</h1>
+            
+            <div class="course-quick-stats">
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> <span id="course-rating">4.9</span> (1,240 reviews)</span>
+                <span class="student-count"><i class="fa-solid fa-user-group"></i> <span id="course-students">4,500+</span> Students enrolled</span>
+            </div>
+
+            <div class="video-preview-box">
+                <img id="course-cover" src="" alt="Course Cover Video Placeholder">
+                <div class="play-overlay-btn"><i class="fa-solid fa-circle-play"></i></div>
+            </div>
+
+            <section class="info-card">
+                <h2>About Course</h2>
+                <p id="course-description">Master the foundations of Artificial Intelligence and Machine Learning...</p>
+                <div class="features-highlights">
+                    <div class="highlight-item"><i class="fa-solid fa-graduation-cap"></i> <div><strong>Industry Standard</strong><p>Curriculum vetted by top AI engineers</p></div></div>
+                    <div class="highlight-item"><i class="fa-solid fa-code"></i> <div><strong>Hands-on Labs</strong><p>Build 5 real-world applications</p></div></div>
+                </div>
+            </section>
+
+            <section class="info-card target-learn-box">
+                <h2>What you'll learn</h2>
+                <ul class="checkmark-grid" id="learning-objectives">
+                    </ul>
+            </section>
+        </div>
+
+        <aside class="purchase-sidebar-card">
+            <div class="pricing-header-row">
+                <span class="discount-price" id="panel-price">NPR 8,500</span>
+                <span class="original-strike" id="panel-old-price">NPR 12,000</span>
+            </div>
+            
+            <button class="btn-enroll-action">Enroll Now</button>
+            <button class="btn-share-action"><i class="fa-solid fa-share-nodes"></i> Share Course</button>
+
+            <div class="inclusion-checklist">
+                <h3>This course includes:</h3>
+                <ul>
+                    <li><i class="fa-solid fa-display"></i> <span id="inc-hours">40+ hours of live sessions</span></li>
+                    <li><i class="fa-solid fa-certificate"></i> Professional Certificate</li>
+                    <li><i class="fa-solid fa-download"></i> 12 Downloadable resources</li>
+                    <li><i class="fa-solid fa-clipboard-question"></i> 15 Quizzes & Assignments</li>
+                    <li><i class="fa-solid fa-infinity"></i> Lifetime access</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // Dictionary dataset mimicking database storage mapping handles
+        const courseDatabase = {
+            "python": {
+                title: "Mastering Python: From Basics to Advanced",
+                price: "NPR 1,000",
+                oldPrice: "NPR 3,000",
+                rating: "4.9",
+                students: "12,450",
+                image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+                desc: "Master Python programing from absolute ground zero. Learn algorithms, data cleaning operations, backend scripting logic structures, and standard real-world deployment frameworks optimized for scalable applications.",
+                hours: "48+ hours of live sessions",
+                objectives: ["Master Python for Data Science and ML", "Build advanced script automations", "Understand backend architecture", "Deploy scalable data modules"]
+            },
+            "ai-fundamentals": {
+                title: "AI & Machine Learning Fundamentals",
+                price: "NPR 8,500",
+                oldPrice: "NPR 12,000",
+                rating: "4.9",
+                students: "4,500+",
+                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+                desc: "Master the foundations of Artificial Intelligence and Machine Learning in this comprehensive, project-based course designed for the modern tech landscape in Nepal. From understanding neural networks to deploying your first predictive model, we cover the end-to-end journey of data science.",
+                hours: "40+ hours of live sessions",
+                objectives: ["Master Python for Data Science and ML", "Understand Supervised & Unsupervised Learning", "Build Neural Networks with TensorFlow", "Implement NLP and Computer Vision models", "Deploy models using Docker and FastAPI", "Data cleaning and visualization techniques"]
+            }
+        };
+
+        // Extraction parameters processing engine logic handles parsing
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseKey = urlParams.get('course') || 'ai-fundamentals'; // Default backup rendering key fallback
+        const selectedData = courseDatabase[courseKey];
+
+        if (selectedData) {
+            document.getElementById('course-title').innerText = selectedData.title;
+            document.getElementById('breadcrumb-current').innerText = selectedData.title;
+            document.getElementById('course-rating').innerText = selectedData.rating;
+            document.getElementById('course-students').innerText = selectedData.students;
+            document.getElementById('course-cover').src = selectedData.image;
+            document.getElementById('course-description').innerText = selectedData.desc;
+            document.getElementById('panel-price').innerText = selectedData.price;
+            document.getElementById('panel-old-price').innerText = selectedData.oldPrice;
+            document.getElementById('inc-hours').innerText = selectedData.hours;
+
+            const objectiveList = document.getElementById('learning-objectives');
+            objectiveList.innerHTML = "";
+            selectedData.objectives.forEach(text => {
+                objectiveList.innerHTML += `<li><i class="fa-regular fa-circle-check"></i> ${text}</li>`;
+            });
+        }
+    </script>
+</body>
+</html>
