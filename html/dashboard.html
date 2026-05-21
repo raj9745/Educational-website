@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talim-digital Nepal</title>
+    <title>Talim - Digital Nepal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,8 +15,8 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-    <span class="logo_image" role="img" aria-label="Logo"></span>
-</div>
+                <span class="logo_image" role="img" aria-label="Logo"></span>
+            </div>
             <nav class="nav-links">
                 <a href="#" class="active">Home</a>
                 <a href="../html/course.html">Courses</a>
@@ -24,8 +24,8 @@
                 <a href="../html/signed_up_user.html">Account</a>
             </nav>
             <div class="nav-actions">
-                <a href="#" class="btn-login">Login</a>
-                <a href="#" class="btn-primary">Get Started</a>
+                <a href="../html/not_signed_up_user.html" class="btn-login">Login</a>
+                <a href="../html/not_signed_up_user.html" class="btn-primary">Get Started</a>
             </div>
         </div>
     </header>
@@ -34,12 +34,12 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="section-tagline">#1 PREMIUM LEARNING PLATFORM IN NEPAL</span>
-                <h1>Creating a more  Digital Nepal</h1>
+                <h1>Creating a more Digital Nepal</h1>
                 <p class="hero-desc">Learn from world-class instructors, earn recognized certifications, and join a global community of 120,000+ learners advancing their careers.</p>
                 
                 <div class="search-box">
                     <input type="email" placeholder="Enter your email address">
-                    <button class="btn-submit">Sign Up Free</button>
+                    <button class="btn-submit" onclick="window.location.href='../html/not_signed_up_user.html'">Sign Up Free</button>
                 </div>
 
                 <div class="hero-stats">
@@ -88,7 +88,7 @@
             <div class="grid course-grid">
                 <div class="course-card">
                     <div class="card-img-wrapper">
-                        <img src="../assets/photography.png">
+                        <img src="../assets/photography.png" alt="Photography">
                         <span class="card-tag tag-photo">Photography</span>
                     </div>
                     <div class="card-content">
@@ -101,10 +101,11 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 1,500</span>
-                            <button class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn-card" onclick="window.location.href='./course.html'">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
+                
                 <div class="course-card">
                     <div class="card-img-wrapper">
                         <img src="../assets/ins.jpg" alt="Design">
@@ -120,13 +121,14 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 1,200</span>
-                            <button class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn-card" onclick="window.location.href='./course.html'">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
+
                 <div class="course-card">
                     <div class="card-img-wrapper">
-                        <img src="../assets/stack.jpg">
+                        <img src="../assets/stack.jpg" alt="Development">
                         <span class="card-tag tag-dev">Development</span>
                     </div>
                     <div class="card-content">
@@ -139,13 +141,14 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 1,500</span>
-                            <button class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn-card" onclick="window.location.href='./course.html'">Enroll Now <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="view-all-wrapper">
-                <a href="#" class="view-all-link">View all 340 courses <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="../html/course.html" class="view-all-link">View all 340 courses <i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </div>
     </section>
@@ -158,10 +161,8 @@
                     <img src="../assets/card2.jpeg" class="img-2" alt="Working on laptop">
                     <img src="../assets/card3.jpeg" class="img-3" alt="Student smiling">
                     <div class="floating-stat-badge">
-                        
-                         <p>15k+</p>
+                         <p>15K+</p>
                          <h4>Happy Learners!!</h4>
-                        
                     </div>
                 </div>
             </div>
@@ -180,7 +181,7 @@
                 </ul>
 
                 <div class="why-us-actions">
-                    <button class="btn-primary-dark">Explore Programs</button>
+                    <button class="btn-primary-dark" onclick="window.location.href='../html/course.html'">Explore Programs</button>
                     <a href="#" class="link-more">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -197,7 +198,7 @@
             <div class="mentor-grid">
                 <div class="mentor-card">
                     <div class="mentor-avatar">
-                        <img src="../assets/teacher1.jpg" alt="Mentor">
+                        <img src="../assets/teacher1.jpg" alt="Rahul shrestha">
                         <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
                     </div>
                     <h3>Rahul shrestha</h3>
@@ -206,7 +207,7 @@
                 </div>
                 <div class="mentor-card">
                     <div class="mentor-avatar">
-                        <img src="../assets/tecaher2.jpg" alt="Mentor">
+                        <img src="../assets/tecaher2.jpg" alt="Joyeeta Basnet">
                         <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
                     </div>
                     <h3>Joyeeta Basnet</h3>
@@ -215,7 +216,7 @@
                 </div>
                 <div class="mentor-card">
                     <div class="mentor-avatar">
-                        <img src="../assets/teacher3.jpg" alt="Mentor">
+                        <img src="../assets/teacher3.jpg" alt="Dr. Ramhari Sharma">
                         <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
                     </div>
                     <h3>Dr. Ramhari Sharma</h3>
@@ -224,7 +225,7 @@
                 </div>
                 <div class="mentor-card">
                     <div class="mentor-avatar">
-                        <img src="../assets/teacher4.jpeg" alt="Mentor">
+                        <img src="../assets/teacher4.jpeg" alt="Bibek Pandey">
                         <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
                     </div>
                     <h3>Bibek Pandey</h3>
@@ -233,7 +234,7 @@
                 </div>
                 <div class="mentor-card">
                     <div class="mentor-avatar">
-                        <img src="../assets/teacher5.JPG" alt="Mentor">
+                        <img src="../assets/teacher5.JPG" alt="Chandra Thapa">
                         <span class="verified-badge"><i class="fa-solid fa-check"></i></span>
                     </div>
                     <h3>Chandra Thapa</h3>
@@ -259,8 +260,7 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="quote">"यो Full-Stack Development कोर्सले मेरो करियर पूर्ण रूपमा परिवर्तन गरिदियो। कोर्स सकाएको ३ महिनाभित्रै मैले एउटा टेक स्टार्टअपमा मेरो सपना जस्तो जागिर पाएँ।
-"</p>
+                    <p class="quote">"यो Full-Stack Development कोर्सले मेरो करियर पूर्ण रूपमा परिवर्तन गरिदियो। कोर्स सकाएको ३ महिनाभित्रै मैले एउटा टेक स्टार्टअपमा मेरो सपना जस्तो जागिर पाएँ।"</p>
                     <div class="user-info">
                         <span class="user-initials bg-b">MT</span>
                         <div>
@@ -359,35 +359,37 @@
         </div>
     </div>
 
-   <footer class="main-footer">
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-brand-column">
-                <div class="footer-logo"></div> 
-                
-                <p class="brand-pitch">
-                    Empowering learners worldwide with structured tracks, real-world projects, and direct access to industry experts.
-                </p>
-                
-                <div class="newsletter-title">Subscribe to our newsletter</div>
-                <div class="footer-newsletter">
-                    <input type="email" placeholder="Your email address">
-                    <button type="button">Join</button>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand-column">
+                    <div class="footer-logo"></div> 
+                    
+                    <p class="brand-pitch">
+                        Empowering learners worldwide with structured tracks, real-world projects, and direct access to industry experts.
+                    </p>
+                    
+                    <div class="newsletter-title">Subscribe to our newsletter</div>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 talim.com. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 talim.com. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
+    <script src="../js/animation.js"></script>
 </body>
 </html>
