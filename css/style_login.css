@@ -91,13 +91,32 @@ body {
     display: inline-block;
 }
 
-..login-page { 
+.login-page { 
     width: 100%;
     display: flex; 
+    flex-direction: column;
     justify-content: center; 
     align-items: center; 
     min-height: 100vh;
-    padding: 80px 20px 40px;
+    padding: 100px 20px 40px;
+}
+
+.page-branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.page-branding img {
+    max-width: 340px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 /* Card Style */
@@ -110,7 +129,7 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     text-align: center;
     border: 1px solid rgba(255,255,255,0.8);
-    margin:200px auto 0;
+    margin: 0 auto;
 }
 
 h1 { 
