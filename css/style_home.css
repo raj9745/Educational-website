@@ -497,25 +497,27 @@ h2 {
     object-fit: cover;
 }
 
+/* Transformed into exact squares while retaining staggered positions */
 .collage-grid .img-1 {
-    width: 280px;
-    height: 240px;
+    width: 240px;
+    height: 240px; /* Square */
     top: 0;
     left: 0;
 }
 
 .collage-grid .img-2 {
-    width: 300px;
-    height: 320px;
+    width: 280px;
+    height: 280px; /* Square */
     top: 40px;
     right: 0;
+    z-index: 2; /* Keeps the main element prominent */
 }
 
 .collage-grid .img-3 {
-    width: 260px;
-    height: 220px;
+    width: 200px;
+    height: 200px; /* Square */
     bottom: 0;
-    left: 40px;
+    left: 60px;
 }
 
 .floating-stat-badge {
@@ -528,6 +530,7 @@ h2 {
     right: 40px;
     text-align: center;
     border: 1px solid #E2E8F0;
+    z-index: 3;
 }
 
 .floating-stat-badge h4 {
@@ -543,6 +546,8 @@ h2 {
     color: #034694;
     margin-top: 6px;
 }
+
+
 
 .why-us-content h2 {
     margin-bottom: 24px;
@@ -609,8 +614,8 @@ h2 {
 
 .mentor-avatar {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto 20px auto;
 }
 
@@ -697,7 +702,6 @@ h2 {
     font-size: 15px;
     color: #1A202C;
     margin-bottom: 28px;
-    font-style: italic;
     line-height: 1.6;
 }
 
