@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    RESET & SYSTEM STYLES
    ========================================================================== */
@@ -14,6 +13,7 @@ body {
     background-color: #FFFFFF;
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px; /* Scaled up default baseline font */
 }
 
 a {
@@ -35,18 +35,18 @@ img {
 /* Utilities */
 .container {
     width: 100%;
-    max-width: 1320px; /* Increased from 1200px to allow a broader screen footprint */
+    max-width: 1320px;
     margin: 0 auto;
-    padding: 0 32px;   /* Slightly increased padding for edge breathing room */
+    padding: 0 32px;
 }
 
 .grid {
     display: grid;
-    gap: 40px;         /* Increased gap from 30px to make elements feel less crowded */
+    gap: 40px;
 }
 
 .section-tagline {
-    font-size: 13px;   /* Tuned up slightly for large screens */
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     color: #034694;
@@ -62,7 +62,7 @@ h1, h2 {
 }
 
 h2 {
-    font-size: 42px;   /* Increased from 36px to fill large viewport contexts */
+    font-size: 44px; /* Slightly adjusted upward */
     color: #011E41;
 }
 
@@ -111,7 +111,7 @@ h2 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 90px; /* Increased from 80px to look more premium on wider screens */
+    height: 90px;
     display: flex;
     align-items: center;
 }
@@ -128,18 +128,18 @@ h2 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
-    height:200px;                 
+    height: 200px;                 
     width: 350px;                
     display: inline-block;
 }
 
 .nav-links {
     display: flex;
-    gap: 40px; /* Wider spacing between nav paths */
+    gap: 40px;
 }
 
 .nav-links a {
-    font-size: 16px; /* Optimized scale balance */
+    font-size: 16px;
     font-weight: 500;
     color: #5A6A85;
 }
@@ -164,28 +164,28 @@ h2 {
    HERO SECTION
    ========================================================================== */
 .hero-section {
-    padding: 120px 0; /* Increased padding dramatically to scale down visual density */
+    padding: 120px 0;
     background-color: #FFFFFF;
 }
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Opens up the text-column percentage footprint */
-    gap: 80px; /* Increased column separation */
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
     align-items: center;
 }
 
 .hero-content h1 {
-    font-size: 64px; /* Increased from 54px to assert strong typography hierarchy */
+    font-size: 64px;
     color: #011E41;
     margin-bottom: 24px;
 }
 
 .hero-desc {
-    font-size: 18px; /* Slightly scaled text weight for higher readability values */
+    font-size: 18px;
     color: #5A6A85;
     margin-bottom: 40px;
-    max-width: 600px; /* Expanded limit bounds so content wraps wider */
+    max-width: 600px;
 }
 
 .search-box {
@@ -194,7 +194,7 @@ h2 {
     border: 1px solid #E2E8F0;
     padding: 8px;
     border-radius: 8px;
-    max-width: 540px; /* Widened interface input block */
+    max-width: 540px;
     margin-bottom: 56px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
@@ -205,7 +205,7 @@ h2 {
     padding: 0 20px;
     flex-grow: 1;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .btn-submit {
@@ -221,19 +221,19 @@ h2 {
 
 .hero-stats {
     display: flex;
-    gap: 64px; /* Spread out metrics */
+    gap: 64px;
     border-top: 1px solid #E2E8F0;
     padding-top: 40px;
 }
 
 .stat-item h3 {
-    font-size: 36px; /* Lifted size numbers */
+    font-size: 36px;
     font-weight: 700;
     color: #011E41;
 }
 
 .stat-item p {
-    font-size: 14px;
+    font-size: 15px;
     color: #5A6A85;
 }
 
@@ -252,7 +252,7 @@ h2 {
 .main-hero-img img {
     border-radius: 12px;
     width: 120%;
-    height: 520px; /* Gave it explicit tall presence on big desktops */
+    height: 520px;
     object-fit: cover;
     box-shadow: 0 24px 48px rgba(0,0,0,0.07);
 }
@@ -268,41 +268,19 @@ h2 {
     box-shadow: 0 12px 36px rgba(0,0,0,0.1);
 }
 
-.badge-top {
-    top: 40px;
-    right: -30px;
-}
-
 .badge-bottom {
     bottom: 40px;
     left: -30px;
 }
 
-.badge-icon {
-    background-color: rgba(3, 70, 148, 0.1);
-    color: #034694;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.badge-icon.check-icon {
-    background-color: rgba(46, 204, 113, 0.1);
-    color: #2ecc71;
-}
-
 .floating-badge h4 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: #011E41;
 }
 
 .floating-badge p {
-    font-size: 13px;
+    font-size: 14px;
     color: #5A6A85;
 }
 
@@ -346,7 +324,7 @@ h2 {
 }
 
 .course-grid {
-    grid-template-columns: repeat(3, 1fr); /* Spans clean 3 columns naturally inside expanded width */
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .course-card {
@@ -365,7 +343,7 @@ h2 {
 
 .card-img-wrapper {
     position: relative;
-    height: 240px; /* Scaled image presentation height upward */
+    height: 240px;
 }
 
 .card-img-wrapper img {
@@ -395,14 +373,14 @@ h2 {
 }
 
 .card-content h3 {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
     color: #011E41;
     margin-bottom: 8px;
 }
 
 .card-content .author {
-    font-size: 14px;
+    font-size: 15px;
     color: #5A6A85;
     margin-bottom: 20px;
 }
@@ -410,7 +388,7 @@ h2 {
 .card-meta {
     display: flex;
     gap: 20px;
-    font-size: 13px;
+    font-size: 14px;
     color: #5A6A85;
     border-bottom: 1px solid #E2E8F0;
     padding-bottom: 20px;
@@ -463,7 +441,7 @@ h2 {
 }
 
 .view-all-link {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #034694;
     display: inline-flex;
@@ -481,7 +459,7 @@ h2 {
 .why-us-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px; /* Wide screen grid layout separation gap */
+    gap: 100px;
     align-items: center;
 }
 
@@ -497,25 +475,24 @@ h2 {
     object-fit: cover;
 }
 
-/* Transformed into exact squares while retaining staggered positions */
 .collage-grid .img-1 {
     width: 240px;
-    height: 240px; /* Square */
+    height: 240px;
     top: 0;
     left: 0;
 }
 
 .collage-grid .img-2 {
     width: 280px;
-    height: 280px; /* Square */
+    height: 280px;
     top: 40px;
     right: 0;
-    z-index: 2; /* Keeps the main element prominent */
+    z-index: 2;
 }
 
 .collage-grid .img-3 {
     width: 200px;
-    height: 200px; /* Square */
+    height: 200px;
     bottom: 0;
     left: 60px;
 }
@@ -547,14 +524,12 @@ h2 {
     margin-top: 6px;
 }
 
-
-
 .why-us-content h2 {
     margin-bottom: 24px;
 }
 
 .why-us-desc {
-    font-size: 17px;
+    font-size: 18px;
     color: #5A6A85;
     margin-bottom: 32px;
 }
@@ -584,7 +559,7 @@ h2 {
 }
 
 .link-more {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #034694;
 }
@@ -643,13 +618,13 @@ h2 {
 }
 
 .mentor-card h3 {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
     color: #011E41;
 }
 
 .mentor-card p {
-    font-size: 13px;
+    font-size: 14px;
     color: #5A6A85;
     margin-bottom: 20px;
 }
@@ -699,7 +674,7 @@ h2 {
 }
 
 .quote {
-    font-size: 15px;
+    font-size: 16px; /* Increased font scale value */
     color: #1A202C;
     margin-bottom: 28px;
     line-height: 1.6;
@@ -729,13 +704,13 @@ h2 {
 .bg-o { background-color: #e67e22; }
 
 .user-info h4 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: #011E41;
 }
 
 .user-info p {
-    font-size: 12px;
+    font-size: 13px;
     color: #5A6A85;
 }
 
@@ -760,7 +735,7 @@ h2 {
 }
 
 .inline-stat-item p {
-    font-size: 14px;
+    font-size: 15px;
     opacity: 0.8;
 }
 
@@ -768,26 +743,50 @@ h2 {
     background-color: #011E41;
     color: #fff;
     padding: 96px 0 48px 0;
-    font-size: 15px;
+    font-size: 16px;
 }
 
+/* Redefined as a centralized single column structural block layout */
 .footer-container {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     padding-bottom: 64px;
+    width: 100%;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 580px;
+}
+
+.footer-logo {
+    background-image: url('../assets/footer_fill.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 160px; /* Refined to fit perfectly alongside the expanded typography */
+    width: 280px;                
+    display: inline-block;
+    border-radius: 24px;
+    margin-bottom: 20px; 
 }
 
 .brand-pitch {
-    opacity: 0.7;
-    margin: 24px 0 36px 0;
-    max-width: 400px;
-    line-height: 1.6;
+    opacity: 0.8;
+    margin: 16px 0 36px 0;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 .newsletter-title {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 16px;
 }
@@ -798,7 +797,8 @@ h2 {
     border: 1px solid rgba(255,255,255,0.1);
     padding: 6px;
     border-radius: 6px;
-    max-width: 400px;
+    width: 100%;
+    max-width: 440px;
 }
 
 .footer-newsletter input {
@@ -809,7 +809,7 @@ h2 {
     padding: 0 16px;
     flex-grow: 1;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .footer-newsletter button {
@@ -819,42 +819,42 @@ h2 {
     padding: 12px 24px;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-.footer-links-column h4 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 28px;
+.footer-newsletter button:hover {
+    background-color: #02336c;
 }
 
-.footer-links-column ul li {
-    margin-bottom: 14px;
-}
-
-.footer-links-column ul li a {
-    opacity: 0.7;
-}
-
-.footer-links-column ul li a:hover {
-    opacity: 1;
-    color: #034694;
-}
-
+/* Baseline Bar Design Configuration Rules */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    font-size: 14px;
-    opacity: 0.6;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    width: 100%;
 }
 
 .social-icons {
     display: flex;
-    gap: 20px;
-    font-size: 18px;
+    gap: 24px;
+    font-size: 50px;
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #034694;
+    transform: translateY(-3px);
 }
 
 /* ==========================================================================
@@ -879,5 +879,9 @@ h2 {
     .section-header { flex-direction: column; align-items: flex-start; gap: 24px; }
     .course-grid, .mentor-grid, .testimonials-grid { grid-template-columns: 1fr; }
     .inline-stats { flex-direction: column; gap: 32px; }
-    .footer-container { grid-template-columns: 1fr; gap: 48px; }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
 }

@@ -1,0 +1,491 @@
+/* ==========================================================================
+   DESIGN ARCHITECTURE STANDARD TYPOGRAPHY & SCHEME RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1A202C;
+    background-color: #FFFFFF;
+    line-height: 1.65; /* Slightly increased for better reading rhythm */
+    font-size: 16px;   /* Base body size bumped up */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Base Layout Toolkits */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-tagline {
+    font-size: 13px; /* Increased from 12px */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #034694;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* UI Action Components */
+.btn-primary {
+    background-color: #034694;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px; /* Increased from 14px */
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #02336c;
+}
+
+.btn-primary-dark {
+    background-color: #011E41;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px; /* Increased from 14px */
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   NAVIGATION ELEMENT
+   ========================================================================== */
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px; /* Slightly adjusted to accommodate clean spacing */
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Match the home page configuration layout style */
+.logo_image {
+    background-image: url('../assets/tfnd.sd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    
+    /* Crucial dimension definitions to force visibility */
+    display: inline-block;
+    height: 200px;                 
+    width: 300px;                
+    min-height: 60px;
+    min-width: 200px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    font-size: 17px; 
+    font-weight: 500;
+    color: #5A6A85;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #034694;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-login {
+    font-size: 15px; 
+    font-weight: 600;
+    color: #1A202C;
+}
+/* ==========================================================================
+   COURSE PAGE HERO CONTAINER
+   ========================================================================== */
+.course-hero-header {
+    padding: 90px 0 50px 0;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.course-hero-header h1 {
+    font-size: 52px; /* Increased from 48px */
+    color: #011E41;
+    margin-bottom: 22px;
+}
+
+.course-hero-header p {
+    font-size: 18px; /* Increased from 16px */
+    color: #5A6A85;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   FILTER TABS ROW & DISPLAY MATRIX
+   ========================================================================== */
+.courses-display-section {
+    padding: 30px 0 90px 0;
+    background-color: #F3F6F9;
+}
+
+.filter-tabs-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    padding: 11px 24px;
+    border-radius: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; /* Increased from 13px */
+    font-weight: 500;
+    cursor: pointer;
+    color: #5A6A85;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #034694;
+    color: #fff;
+    border-color: #034694;
+}
+
+/* Uniform Core Layout Grid Matrix */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+    border: 1px solid #E2E8F0;
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 220px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.tag-blue { 
+    background-color: #034694; 
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card-content h3 {
+    font-size: 19px; /* Increased from 18px */
+    font-weight: 700;
+    color: #011E41;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    height: 54px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-content .author {
+    font-size: 14px; /* Increased from 13px */
+    color: #5A6A85;
+    margin-bottom: 18px;
+}
+
+.card-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 13px; /* Increased from 12px */
+    color: #5A6A85;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.card-meta i {
+    margin-right: 5px;
+}
+
+.card-meta .rating {
+    margin-left: auto;
+    color: #FF9F43;
+    font-weight: 600;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer .price {
+    font-size: 22px; /* Increased from 20px */
+    font-weight: 700;
+    color: #011E41;
+}
+
+.btn-card {
+    background-color: #011E41;
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-card:hover {
+    background-color: #034694;
+}
+
+/* ==========================================================================
+   MEMBERSHIP BANNER LAYOUT Block
+   ========================================================================== */
+.membership-cta-block {
+    padding: 70px 0;
+    background-color: #FFFFFF;
+}
+
+.cta-inner-card {
+    background-color: #F3F6F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 65px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.promo-tag {
+    font-size: 12px; /* Increased from 11px */
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #034694;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.cta-inner-card h2 {
+    font-size: 40px; /* Increased from 36px */
+    color: #011E41;
+    margin-bottom: 18px;
+}
+
+.cta-inner-card p {
+    color: #5A6A85;
+    max-width: 620px;
+    margin: 0 auto 36px auto;
+    font-size: 16px; /* Increased from 15px */
+}
+
+/* ==========================================================================
+   NEWSLETTER BLOCK AT LEVEL PANELS
+   ========================================================================== */
+.newsletter-subscription-panel {
+    padding: 90px 0;
+    background-color: #F3F6F9;
+    border-top: 1px solid #E2E8F0;
+}
+
+.newsletter-panel-content {
+    text-align: center;
+}
+
+.newsletter-panel-content h2 {
+    font-size: 34px; /* Increased from 32px */
+    color: #011E41;
+    margin-bottom: 14px;
+}
+
+.newsletter-panel-content p {
+    color: #5A6A85;
+    margin-bottom: 32px;
+    font-size: 17px;
+}
+
+.search-box {
+    display: flex;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    padding: 6px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    flex-grow: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+}
+
+.btn-submit {
+    background-color: #011E41;
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   BRAND INTEGRATED CORPORATE FOOTER BLOCK
+   ========================================================================== */
+.main-footer {
+    background-color: #011E41;
+    color: #fff;
+    padding: 85px 0 45px 0;
+    font-size: 15px; /* Increased from 14px */
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 60px;
+}
+
+.logo.inverted img {
+    height: 45px;
+    width: auto;
+    filter: brightness(0) invert(1); /* Forces the logo image clean white for the navy background */
+}
+
+.brand-pitch {
+    opacity: 0.7;
+    margin-top: 22px;
+    max-width: 360px;
+    line-height: 1.65;
+}
+
+.footer-links-column h4 {
+    font-size: 17px; /* Increased from 16px */
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.footer-links-column ul li {
+    margin-bottom: 14px;
+}
+
+.footer-links-column ul li a {
+    opacity: 0.7;
+}
+
+.footer-links-column ul li a:hover {
+    opacity: 1;
+    color: #034694;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM MEDIA BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .course-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-inner-card { padding: 45px 24px; }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .nav-actions .btn-login { display: none; }
+    .course-hero-header h1 { font-size: 36px; }
+    .course-grid { grid-template-columns: 1fr; }
+    .footer-container { grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
