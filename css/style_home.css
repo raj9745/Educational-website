@@ -138,7 +138,7 @@ h2 {
 
 
 .logo_image{
-    background-image: url('./tfnd.sd.png');
+    background-image: url('../assets/tfnd.sd.png');
     background-size: contain;    /* Force the image to scale down perfectly without clipping */
     background-repeat: no-repeat;
     background-position: center;
