@@ -35,6 +35,23 @@ body {
     margin: 0 0 24px 0;
 }
 
+.search-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #5A6A85;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.link-reset {
+    background: transparent;
+    border: none;
+    color: #034694;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .hero-badges {
     display: flex;
     gap: 16px;
@@ -184,6 +201,49 @@ body {
     margin-bottom: 14px;
 }
 
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-secondary {
+    border: 1px solid #E2E8F0;
+    background: #ffffff;
+    color: #011E41;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.save-btn {
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    color: #5A6A85;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.save-btn.saved {
+    background: rgba(3, 70, 148, 0.1);
+    color: #034694;
+    border-color: rgba(3, 70, 148, 0.3);
+}
+
+.blog-empty {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border: 1px dashed #CBD5E1;
+    border-radius: 12px;
+    color: #5A6A85;
+    text-align: center;
+    display: none;
+}
+
 .post-tag {
     font-size: 12px;
     font-weight: 700;
@@ -235,169 +295,31 @@ body {
     border: none;
 }
 
-/* ==========================================================================
-     ABOUT FOOTER WITH MAP (MATCH ABOUT PAGE)
-     ========================================================================== */
-.main-footer {
-    background-color: #011E41;
-    color: #fff;
-    padding: 96px 0 48px 0;
-    font-size: 16px;
-    border-top: 1px solid #E2E8F0;
+@media (max-width: 900px) {
+    .blog-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
-.footer-grid-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr 1.2fr;
-    gap: 64px;
-    padding-bottom: 64px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+@media (max-width: 640px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
 
-.footer-column {
-    display: flex;
-    flex-direction: column;
+    .search-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
-
-.footer-column-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.footer-logo {
-    background-image: url('../assets/tfnd.sd.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left center;
-    height: 100px;
-    width: 240px;
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.brand-pitch {
-    color: #94A3B8;
-    margin: 12px 0 28px 0;
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-.newsletter-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #94A3B8;
-}
-
-.footer-newsletter {
-    display: flex;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 5px;
-    border-radius: 8px;
-    width: 100%;
-}
-
-.footer-newsletter input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    padding: 0 14px;
-    flex-grow: 1;
-    font-family: inherit;
-    font-size: 14px;
-}
-
-.footer-newsletter button {
-    background-color: #034694;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.node-description {
-    font-size: 14px;
-    color: #94A3B8;
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-.footer-detail-card {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.f-detail-row {
-    display: flex;
-    align-items: start;
-    gap: 16px;
-}
-
-.f-detail-row i {
-    font-size: 16px;
-    color: #034694;
-    background: rgba(255, 255, 255, 0.04);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.f-detail-row h5 {
-    font-size: 14px;
-    color: #FFFFFF;
-    font-weight: 600;
-    margin: 0 0 2px 0;
-}
-
-.f-detail-row p {
-    font-size: 13px;
-    color: #94A3B8;
-    margin: 0;
-    line-height: 1.4;
-}
-
-.footer-map-wrapper {
-    position: relative;
-    width: 100%;
-    flex-grow: 1;
-    min-height: 350px;
-    width: 700px;
-}
-
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    z-index: 5;
-}
-
-.leaflet-bar { border: none !important; box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important; }
-.leaflet-bar a { background-color: #011E41 !important; color: #FFFFFF !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
-.leaflet-bar a:hover { background-color: #034694 !important; }
 
 .footer-bottom {
     display: flex;

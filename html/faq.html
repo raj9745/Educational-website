@@ -7,9 +7,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style_home.css">
   <link rel="stylesheet" href="../css/faq.css">
 </head>
 <body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+      </div>
+      <nav class="nav-links">
+        <a href="dashboard.html">Home</a>
+        <a href="course.html">Courses</a>
+        <a href="blogs.html">Blog</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="signed_up_user.html">Account</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="register.html" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
   <header class="faq-hero">
     <div class="container">
       <span class="section-tagline">HELP CENTER</span>
@@ -19,11 +41,51 @@
         <input id="faq-search" type="text" placeholder="Search for a topic or keyword">
         <button id="faq-clear" class="btn-secondary" type="button">Clear</button>
       </div>
+      <div class="faq-tools">
+        <div class="faq-tabs">
+          <button class="faq-tab active" type="button" data-category="All">All</button>
+          <button class="faq-tab" type="button" data-category="Enrollment">Enrollment</button>
+          <button class="faq-tab" type="button" data-category="Payments">Payments</button>
+          <button class="faq-tab" type="button" data-category="Certificates">Certificates</button>
+        </div>
+        <div class="faq-actions">
+          <span id="faq-count">Showing 6 answers</span>
+          <button id="faq-expand" class="btn-ghost" type="button">Expand all</button>
+          <button id="faq-collapse" class="btn-ghost" type="button">Collapse all</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="faq-content">
     <div class="container">
+      <section class="faq-highlights">
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <h3>Explore courses</h3>
+            <p>Browse skill tracks, mentor ratings, and weekly schedules.</p>
+            <a href="course.html" class="help-link">Go to courses</a>
+          </div>
+        </div>
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-book"></i></div>
+          <div>
+            <h3>Read student blogs</h3>
+            <p>See study workflows, portfolio tips, and internship guides.</p>
+            <a href="blogs.html" class="help-link">Visit the blog</a>
+          </div>
+        </div>
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <h3>Manage your account</h3>
+            <p>Track enrollments, certificates, and saved lessons.</p>
+            <a href="signed_up_user.html" class="help-link">Open dashboard</a>
+          </div>
+        </div>
+      </section>
+
       <section class="faq-section" data-category="Enrollment">
         <h2>Enrollment</h2>
         <div class="faq-item">
@@ -89,8 +151,71 @@
           </div>
         </div>
       </section>
+
+      <section class="faq-support">
+        <div class="support-card">
+          <h3>Still need help?</h3>
+          <p>Contact our student success team for 1:1 guidance and quick answers.</p>
+          <div class="support-actions">
+            <a href="mailto:contact@talim.com" class="btn-primary">Email support</a>
+            <a href="blogs.html" class="btn-secondary">Browse FAQs + blogs</a>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
+
+  <div class="pre-footer-stats">
+    <div class="container inline-stats">
+      <div class="inline-stat-item">
+        <h3>120,000+</h3>
+        <p>Active Learners</p>
+      </div>
+      <div class="inline-stat-item">
+        <h3>340+</h3>
+        <p>Expert Courses</p>
+      </div>
+      <div class="inline-stat-item">
+        <h3>85+</h3>
+        <p>Mentors Worldwide</p>
+      </div>
+      <div class="inline-stat-item">
+        <h3>98%</h3>
+        <p>Satisfaction Rate</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-brand-column">
+          <div class="footer-logo"></div>
+
+          <p class="brand-pitch">
+            Empowering learners worldwide with structured tracks, real-world projects, and direct access to industry experts.
+          </p>
+
+          <div class="newsletter-title">Subscribe to our newsletter</div>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email address">
+            <button type="button">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 talim.com. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="../js/faq.js"></script>
 </body>

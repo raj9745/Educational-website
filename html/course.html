@@ -16,17 +16,19 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="../html/dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+                <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
             </div>
             <nav class="nav-links">
-                <a href="../html/dashboard.html">Home</a>
-                <a href="#" class="active">Courses</a>
-                <a href="#">About</a>
-                <a href="#">Account</a>
+                <a href="dashboard.html">Home</a>
+                <a href="course.html" class="active">Courses</a>
+                <a href="blogs.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="signed_up_user.html">Account</a>
             </nav>
             <div class="nav-actions">
-                <a href="#" class="btn-login">Login</a>
-                <a href="#" class="btn-primary">Get Started</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-primary">Get Started</a>
             </div>
         </div>
     </header>
@@ -42,16 +44,20 @@
         <div class="container">
             
             <div class="filter-tabs-row">
-                <button class="tab-btn active">All categories</button>
-                <button class="tab-btn">AI</button>
-                <button class="tab-btn">Programming</button>
-                <button class="tab-btn">Digital Marketing</button>
-                <button class="tab-btn">Design</button>
-                <button class="tab-btn">Blockchain</button>
+                <button class="tab-btn active" data-category="All">All categories</button>
+                <button class="tab-btn" data-category="AI">AI</button>
+                <button class="tab-btn" data-category="Programming">Programming</button>
+                <button class="tab-btn" data-category="Digital Marketing">Digital Marketing</button>
+                <button class="tab-btn" data-category="Design">Design</button>
+                <button class="tab-btn" data-category="Blockchain">Blockchain</button>
+            </div>
+
+            <div class="course-status">
+                <span id="course-count">Showing 6 courses</span>
             </div>
 
             <div class="course-grid">
-                <div class="course-card">
+                <div class="course-card" data-category="Programming">
                     <div class="card-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80" alt="Programming">
                         <span class="card-tag tag-blue">Programming</span>
@@ -71,9 +77,9 @@
                     </div>
                 </div>
 
-                <div class="course-card">
+                <div class="course-card" data-category="AI">
                     <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" alt="AI & ML">
+                        <img src="../assets/AI.jpg" alt="AI & ML">
                         <span class="card-tag tag-blue">AI & ML</span>
                     </div>
                     <div class="card-content">
@@ -91,7 +97,7 @@
                     </div>
                 </div>
 
-                <div class="course-card">
+                <div class="course-card" data-category="Digital Marketing">
                     <div class="card-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="Digital Marketing">
                         <span class="card-tag tag-blue">Digital Marketing</span>
@@ -111,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="course-card">
+                <div class="course-card" data-category="Design">
                     <div class="card-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=400&q=80" alt="Design">
                         <span class="card-tag tag-blue">Design</span>
@@ -131,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="course-card">
+                <div class="course-card" data-category="Programming">
                     <div class="card-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80" alt="Programming">
                         <span class="card-tag tag-blue">Programming</span>
@@ -151,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="course-card">
+                <div class="course-card" data-category="Blockchain">
                     <div class="card-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80" alt="Blockchain">
                         <span class="card-tag tag-blue">Blockchain</span>
@@ -171,6 +177,7 @@
                     </div>
                 </div>
             </div>
+            <div id="course-empty" class="course-empty">No courses match this category.</div>
 
         </div>
     </section>
@@ -198,6 +205,8 @@
             </div>
         </div>
     </section>
+
+    <script src="../js/courses.js"></script>
 
 </body>
 </html>

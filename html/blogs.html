@@ -22,12 +22,13 @@
         <a href="dashboard.html">Home</a>
         <a href="course.html">Courses</a>
         <a href="blogs.html" class="active">Blog</a>
+        <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
         <a href="signed_up_user.html">Account</a>
       </nav>
       <div class="nav-actions">
-        <a href="not_signed_up_user.html" class="btn-login">Login</a>
-        <a href="not_signed_up_user.html" class="btn-primary">Get Started</a>
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="register.html" class="btn-primary">Get Started</a>
       </div>
     </div>
   </header>
@@ -38,9 +39,13 @@
         <span class="section-tagline">BLOG & INSIGHTS</span>
         <h1>Weekly ideas to level up your tech career</h1>
         <p class="hero-desc">Actionable guides, student stories, and industry trends curated by Talim mentors.</p>
-        <div class="search-box">
-          <input type="text" placeholder="Search articles, topics, or authors">
-          <button class="btn-primary">Search</button>
+        <div class="search-box blog-search">
+          <input id="blog-search" type="text" placeholder="Search articles, topics, or authors">
+          <button id="blog-search-btn" class="btn-primary" type="button">Search</button>
+        </div>
+        <div class="search-meta">
+          <span id="blog-count">Showing 6 articles</span>
+          <button id="blog-clear" class="link-reset" type="button">Clear filters</button>
         </div>
         <div class="hero-badges">
           <div class="hero-badge"><strong>120K+</strong><span>Readers</span></div>
@@ -56,7 +61,7 @@
           <span><i class="fa-regular fa-user"></i> Talim Team</span>
           <span><i class="fa-regular fa-clock"></i> 6 min read</span>
         </div>
-        <a class="btn-primary" href="#">Read article</a>
+        <a class="btn-primary" href="#latest-articles">Read article</a>
       </div>
     </div>
   </section>
@@ -66,17 +71,17 @@
       <div class="section-header">
         <h2>Latest Articles</h2>
         <div class="filter-tabs">
-          <button class="tab-btn active">All</button>
-          <button class="tab-btn">AI</button>
-          <button class="tab-btn">Programming</button>
-          <button class="tab-btn">Design</button>
-          <button class="tab-btn">Career</button>
-          <button class="tab-btn">Marketing</button>
+          <button class="tab-btn active" data-category="All">All</button>
+          <button class="tab-btn" data-category="AI">AI</button>
+          <button class="tab-btn" data-category="Programming">Programming</button>
+          <button class="tab-btn" data-category="Design">Design</button>
+          <button class="tab-btn" data-category="Career">Career</button>
+          <button class="tab-btn" data-category="Marketing">Marketing</button>
         </div>
       </div>
 
-      <div class="blog-grid">
-        <article class="blog-card">
+      <div id="latest-articles" class="blog-grid">
+        <article class="blog-card" data-category="Programming" data-article-id="python-projects">
           <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="Programming">
           <div class="card-body">
             <span class="post-tag">Programming</span>
@@ -86,9 +91,13 @@
               <span><i class="fa-regular fa-user"></i> A. Thapa</span>
               <span><i class="fa-regular fa-clock"></i> 5 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
-        <article class="blog-card">
+        <article class="blog-card" data-category="Design" data-article-id="ux-research">
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Design">
           <div class="card-body">
             <span class="post-tag">Design</span>
@@ -98,9 +107,13 @@
               <span><i class="fa-regular fa-user"></i> S. Rai</span>
               <span><i class="fa-regular fa-clock"></i> 4 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
-        <article class="blog-card">
+        <article class="blog-card" data-category="AI" data-article-id="ai-tools">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="AI">
           <div class="card-body">
             <span class="post-tag">AI</span>
@@ -110,9 +123,13 @@
               <span><i class="fa-regular fa-user"></i> P. KC</span>
               <span><i class="fa-regular fa-clock"></i> 6 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
-        <article class="blog-card">
+        <article class="blog-card" data-category="Marketing" data-article-id="seo-foundations">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Marketing">
           <div class="card-body">
             <span class="post-tag">Marketing</span>
@@ -122,10 +139,14 @@
               <span><i class="fa-regular fa-user"></i> Talim Team</span>
               <span><i class="fa-regular fa-clock"></i> 5 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80" alt="Career">
+        <article class="blog-card" data-category="Career" data-article-id="interview-prep">
+          <img src="../assets/interview-prep-check.jpg" alt="Career">
           <div class="card-body">
             <span class="post-tag">Career</span>
             <h3>Interview prep checklist for fresh graduates</h3>
@@ -134,9 +155,13 @@
               <span><i class="fa-regular fa-user"></i> N. Sharma</span>
               <span><i class="fa-regular fa-clock"></i> 7 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
-        <article class="blog-card">
+        <article class="blog-card" data-category="Programming" data-article-id="github-profile">
           <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&w=800&q=80" alt="Profile">
           <div class="card-body">
             <span class="post-tag">Programming</span>
@@ -146,66 +171,184 @@
               <span><i class="fa-regular fa-user"></i> Talim Team</span>
               <span><i class="fa-regular fa-clock"></i> 4 min read</span>
             </div>
+            <div class="card-actions">
+              <a class="btn-secondary" href="course.html">Start learning</a>
+              <button class="save-btn" type="button" data-save>Save</button>
+            </div>
           </div>
         </article>
       </div>
+      <div id="blog-empty" class="blog-empty">No articles match your filters yet.</div>
     </div>
   </section>
 
   <section class="blog-cta">
-    <div class="container cta-card">
-      <div>
-        <h2>Want weekly updates?</h2>
-        <p>Get free resources, hiring tips, and discounts delivered to your inbox.</p>
+  <div class="container cta-card">
+
+    <div>
+      <h2>Want weekly updates?</h2>
+
+      <p>
+        Get free resources, hiring tips, and discounts delivered to your inbox.
+      </p>
+    </div>
+
+    <div class="cta-form">
+
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Enter your email"
+      >
+
+      <!-- FIXED FUNCTION NAME -->
+      <button
+        class="btn-primary"
+        onclick="subscribe()"
+      >
+        Subscribe
+      </button>
+
+    </div>
+
+    <p id="errorMessage" style="color:red;"></p>
+
+  </div>
+</section>
+
+<!-- Popup -->
+<div
+  id="popup"
+  style="
+    display:none;
+    position:fixed;
+    top:30%;
+    left:40%;
+    padding:20px;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+  "
+>
+
+  <p id="popupText"></p>
+
+  <button onclick="closePopup()">
+    Close
+  </button>
+
+</div>
+
+<!-- EmailJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+  // Initialize EmailJS
+  emailjs.init("YOUR_PUBLIC_KEY");
+
+  // Subscribe function
+  function subscribe() {
+
+    const email =
+      document.getElementById("emailInput").value;
+
+    const error =
+      document.getElementById("errorMessage");
+
+    // Empty validation
+    if (email.trim() === "") {
+
+      error.innerText =
+        "Please enter your email.";
+
+      return;
+    }
+
+    // Clear error
+    error.innerText = "";
+
+    // Send Email
+    emailjs.send(
+      "service_k5otg6c",
+      "YOUR_TEMPLATE_ID",
+      {
+        user_email: email
+      }
+    )
+
+    .then(function(response) {
+
+      // Show popup
+      document.getElementById("popupText").innerText =
+        "Thank you for subscribing with " +
+        email +
+        ". You'll receive weekly updates.";
+
+      document.getElementById("popup").style.display =
+        "block";
+
+      // Clear input
+      document.getElementById("emailInput").value = "";
+
+    })
+
+    .catch(function(error) {
+
+      alert("Failed to send email.");
+
+      console.log(error);
+
+    });
+
+  }
+
+  // Close popup
+  function closePopup() {
+
+    document.getElementById("popup").style.display =
+      "none";
+
+  }
+
+</script>
+
+  <div class="pre-footer-stats">
+    <div class="container inline-stats">
+      <div class="inline-stat-item">
+        <h3>120,000+</h3>
+        <p>Active Learners</p>
       </div>
-      <div class="cta-form">
-        <input type="email" placeholder="Enter your email">
-        <button class="btn-primary">Subscribe</button>
+      <div class="inline-stat-item">
+        <h3>340+</h3>
+        <p>Expert Courses</p>
+      </div>
+      <div class="inline-stat-item">
+        <h3>85+</h3>
+        <p>Mentors Worldwide</p>
+      </div>
+      <div class="inline-stat-item">
+        <h3>98%</h3>
+        <p>Satisfaction Rate</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer class="main-footer">
     <div class="container">
-      <div class="footer-grid-layout">
-        <div class="footer-column brand-info">
+      <div class="footer-container">
+        <div class="footer-brand-column">
           <div class="footer-logo"></div>
+
           <p class="brand-pitch">
             Empowering learners worldwide with structured tracks, real-world projects, and direct access to industry experts.
           </p>
+
           <div class="newsletter-title">Subscribe to our newsletter</div>
           <div class="footer-newsletter">
             <input type="email" placeholder="Your email address">
             <button type="button">Join</button>
-          </div>
-        </div>
-
-        <div class="footer-column contact-info">
-          <h4 class="footer-column-title">Testing Facility</h4>
-          <p class="node-description">Our structural sandbox environment and interactive operations systems run live out of the LBEF technology cluster.</p>
-
-          <div class="footer-detail-card">
-            <div class="f-detail-row">
-              <i class="fa-solid fa-location-dot"></i>
-              <div>
-                <h5>Campus Base</h5>
-                <p>Lord Buddha Education Foundation, Kathmandu 44600, Nepal</p>
-              </div>
-            </div>
-            <div class="f-detail-row">
-              <i class="fa-solid fa-envelope"></i>
-              <div>
-                <h5>Support & Comms</h5>
-                <p>contact@talim.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-column map-panel">
-          <h4 class="footer-column-title">Geographic Location</h4>
-          <div class="footer-map-wrapper">
-            <div id="map"></div>
           </div>
         </div>
       </div>
@@ -223,7 +366,6 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="../js/map.js"></script>
+  <script src="../js/blogs.js"></script>
 </body>
 </html>
