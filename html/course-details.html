@@ -51,7 +51,7 @@
             display: block;
             width: 120px;
             height: 40px;
-            background: #011E41; /* Fallback placeholder color badge */
+            background: #011E41;
             border-radius: 6px;
         }
         .nav-links a {
@@ -140,7 +140,7 @@
             overflow: hidden;
             margin-bottom: 40px;
             background: #000000;
-            aspect-ratio: 16 / 9; /* Ensures container dimensions stay uniform */
+            aspect-ratio: 16 / 9;
             width: 100%;
         }
         .video-preview-box img {
@@ -153,7 +153,7 @@
         }
         .video-preview-box.playing img,
         .video-preview-box.playing .play-overlay-btn {
-            display: none; /* Safely clear away the placeholder layer when playing */
+            display: none;
         }
         .video-preview-box video {
             display: none;
@@ -162,7 +162,7 @@
             object-fit: cover;
         }
         .video-preview-box.playing video {
-            display: block; /* Mount active element track container */
+            display: block;
         }
         .play-overlay-btn {
             position: absolute;
@@ -276,7 +276,7 @@
         .inclusion-checklist i { color: #034694; width: 16px; text-align: center; }
 
         /* ==========================================================================
-           6. SYSTEM MODAL INTERFACE COMPONENTS LAYOUT (DASHBOARD CONSISTENT)
+           6. SYSTEM MODAL INTERFACE COMPONENTS LAYOUT
            ========================================================================== */
         .modal-overlay {
             position: fixed;
@@ -387,7 +387,7 @@
         .btn-submit-enrollment:hover { background: #02336C; }
 
         /* ==========================================================================
-           7. SUCCESS DISPLAY NOTIFICATION CARD PANEL VIEW OVERLAYS
+           7. SUCCESS DISPLAY NOTIFICATION CARD
            ========================================================================== */
         .success-modal-card {
             background: #FFFFFF;
@@ -444,7 +444,6 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* Responsive Break Configurations UI adjustment bounds */
         @media(max-width: 992px) {
             .detail-layout { grid-template-columns: 1fr; gap: 30px; }
             .purchase-sidebar-card { position: relative; top: 0; }
@@ -492,7 +491,7 @@
             <div class="video-preview-box" id="preview-box-container">
                 <img id="course-cover" src="" alt="Course Cover Placeholder">
                 <div class="play-overlay-btn" id="trigger-play-video"><i class="fa-solid fa-circle-play"></i></div>
-                <video id="course-main-video" controls src=""></video>
+                <video id="course-main-video" controls src="../assets/coding.mp4"></video>
             </div>
 
             <section class="info-card">
@@ -584,7 +583,6 @@
     </div>
 
     <script>
-        // Database expanded with sample preview videos for each unique target course key
         const courseDatabase = {
             "python": {
                 title: "Mastering Python: From Basics to Advanced",
@@ -594,7 +592,6 @@
                 rating: "4.9",
                 students: "12450",
                 image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/mov_bbb.mp4",
                 desc: "Master Python programming from absolute ground zero. Learn backend scripting logic structures, algorithms, object-oriented concepts, and clean production architecture optimization frameworks standard across elite tech teams.",
                 hours: "48 hours of comprehensive instruction",
                 objectives: ["Write robust backend operational algorithms", "Work fluently with standard file automation scripts", "Understand baseline data structuring methods", "Implement OOP architectures efficiently"]
@@ -607,7 +604,6 @@
                 rating: "4.8",
                 students: "8920",
                 image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/movie.mp4",
                 desc: "Master the foundations of Artificial Intelligence and Machine Learning. From understanding classic mathematical mechanics to coding baseline mathematical configurations using TensorFlow, discover how data models make logical classifications.",
                 hours: "32 hours of interactive learning blocks",
                 objectives: ["Understand supervised & unsupervised model mechanics", "Build neural network layers from scratch", "Clean complex operational training datasets", "Deploy basic predictive logic nodes"]
@@ -620,7 +616,6 @@
                 rating: "4.7",
                 students: "5400",
                 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/mov_bbb.mp4",
                 desc: "Elevate your enterprise rank positions across search engine parameters. Learn indexing pipelines, dynamic keyword data mappings, programmatic speed enhancements, and technical architecture configuration optimizations for cross-functional teams.",
                 hours: "24 hours of technical strategy coaching",
                 objectives: ["Configure crawling and indexing priority configurations", "Analyze competitive traffic patterns accurately", "Execute structured technical schema markups", "Scale content planning architectures gracefully"]
@@ -633,7 +628,6 @@
                 rating: "4.9",
                 students: "15200",
                 image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/movie.mp4",
                 desc: "Deep dive into visual interaction hierarchies, design systems, modern typography standards, wireframe validation tracking, testing modules, and pixel-perfect high-fidelity interface prototyping setups inside modern collaboration ecosystems.",
                 hours: "60 hours of interface layout labs",
                 objectives: ["Create production-grade dynamic design systems", "Conduct rigorous interactive user testing validations", "Master wireframe state workflow transitions", "Deliver responsive viewport asset sheets cleanly"]
@@ -646,7 +640,6 @@
                 rating: "4.8",
                 students: "22100",
                 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/mov_bbb.mp4",
                 desc: "Become a proficient, self-contained cloud application engineer. Cover reactive visual client mechanics, asynchronous logical data systems, non-relational storage architectures, validation configurations, and server deployments.",
                 hours: "120 hours of end-to-end cloud development",
                 objectives: ["Build single-page web interfaces efficiently", "Establish RESTful logical route APIs safely", "Integrate non-relational database operations", "Deploy operational builds to automated cloud systems"]
@@ -659,7 +652,6 @@
                 rating: "4.6",
                 students: "2800",
                 image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
-                video: "https://www.w3schools.com/html/movie.mp4",
                 desc: "Unlock cryptography transaction capabilities. Program gas-optimized logic rules, execute programmatic parameter validations, compile secure protocol blocks, map variable dependencies, and defend against vector exploits.",
                 hours: "40 hours of advanced cryptographic coding",
                 objectives: ["Author compilation contracts using modern Solidity syntax", "Mitigate critical security reentrancy exploits", "Optimize gas spending metrics inside functions", "Deploy scripts onto functional sandbox networks"]
@@ -667,7 +659,8 @@
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const courseKey = urlParams.get('course') || 'ai-fundamentals'; 
+        // Fallback default course key is 'python' if none is set in the URL query string
+        const courseKey = urlParams.get('course') || 'python'; 
         const selectedData = courseDatabase[courseKey];
 
         if (selectedData) {
@@ -682,8 +675,8 @@
             document.getElementById('panel-old-price').innerText = selectedData.oldPrice;
             document.getElementById('inc-hours').innerText = selectedData.hours;
 
-            // Inject video url path resource destination
-            document.getElementById('course-main-video').src = selectedData.video || "https://www.w3schools.com/html/movie.mp4";
+            // Dynamically build the exact requested relative path mapping system structure
+            document.getElementById('course-main-video').src = `../assets/coding.mp4`;
 
             document.getElementById('modal-summary-title').innerText = selectedData.title;
             document.getElementById('modal-summary-price').innerText = selectedData.price;
@@ -697,17 +690,17 @@
             document.getElementById('course-title').innerText = "Course Profile Not Found";
         }
 
-        // Active Inline Video Playback Controls Logic
+        // Inline Video Playback Controls Pipeline Configuration logic mapping
         const previewBoxContainer = document.getElementById('preview-box-container');
         const triggerPlayVideo = document.getElementById('trigger-play-video');
         const courseMainVideo = document.getElementById('course-main-video');
 
         triggerPlayVideo.addEventListener('click', () => {
-            previewBoxContainer.classList.add('playing'); // Applies CSS to clean down metadata overlays
-            courseMainVideo.play(); // Direct native video initialization command
+            previewBoxContainer.classList.add('playing');
+            courseMainVideo.play();
         });
 
-        // Modal Elements Reference Mapping
+        // Modal Form Interface Mappings
         const enrollmentModal = document.getElementById('enrollment-modal');
         const successModal = document.getElementById('success-modal');
         
@@ -716,23 +709,19 @@
         const enrollForm = document.getElementById('enroll-form');
         const closeSuccessBtn = document.getElementById('btn-success-close');
 
-        // Toggle Form Modal Interface Visibility
         openEnrollBtn.addEventListener('click', () => enrollmentModal.classList.add('active'));
         closeEnrollBtn.addEventListener('click', () => enrollmentModal.classList.remove('active'));
 
-        // Form Submit interception logic pipeline
         enrollForm.addEventListener('submit', (e) => {
             e.preventDefault(); 
             enrollmentModal.classList.remove('active'); 
             successModal.classList.add('active'); 
         });
 
-        // Redirect when Success notification card call-to-action button fires
         closeSuccessBtn.addEventListener('click', () => {
             window.location.href = "dashboard.html";
         });
 
-        // Close form if student clicks away into safe blur canvas zones
         window.addEventListener('click', (e) => {
             if (e.target === enrollmentModal) enrollmentModal.classList.remove('active');
         });
