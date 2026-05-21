@@ -3,265 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Talim.com</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Blog - Talim</title>
   <link rel="stylesheet" href="../css/blogs.css">
 </head>
 <body>
+
   <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
-      </div>
-      <nav class="nav-links">
-        <a href="dashboard.html">Home</a>
-        <a href="course.html">Courses</a>
-        <a href="blogs.html" class="active">Blog</a>
-        <a href="#">About</a>
-        <a href="#">Account</a>
+    <div class="nav-container">
+      <a href="dashboard.html" class="logo_image"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="blogs.html" class="active">Blog</a></li>
+        </ul>
       </nav>
       <div class="nav-actions">
-        <a href="#" class="btn-login">Login</a>
-        <a href="#" class="btn-primary">Get Started</a>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="register.html" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </header>
 
-  <section class="blog-hero">
+  <section class="hero">
     <div class="container">
-      <span class="section-tagline">BLOG & INSIGHTS</span>
-      <h1>Learn faster with weekly tech insights</h1>
-      <p>Practical lessons, student stories, and industry trends curated by our mentors.</p>
-      <div class="blog-hero-stats">
-        <div class="stat-pill">
-          <strong>120K+</strong>
-          <span>Readers</span>
-        </div>
-        <div class="stat-pill">
-          <strong>340+</strong>
-          <span>Articles</span>
-        </div>
-        <div class="stat-pill">
-          <strong>98%</strong>
-          <span>Helpful Rating</span>
-        </div>
-      </div>
+      <h1>Weekly Tech Insights</h1>
       <div class="search-box">
-        <input type="text" placeholder="Search articles, topics, or authors">
-        <button class="btn-submit">Search</button>
+        <input type="text" placeholder="Search articles...">
+        <button class="btn btn-primary">Search</button>
       </div>
     </div>
   </section>
 
-  <section class="blog-featured">
-    <div class="container featured-card">
-      <div class="featured-media">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Featured post">
-      </div>
-      <div class="featured-content">
-        <span class="post-tag">Career</span>
-        <h2>How to build a tech portfolio that gets interviews</h2>
-        <p>Step-by-step guidance to showcase projects, highlight impact, and get noticed.</p>
-        <div class="post-meta">
-          <span><i class="fa-regular fa-user"></i> Talim Team</span>
-          <span><i class="fa-regular fa-calendar"></i> May 21, 2026</span>
-          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-        </div>
-        <a class="btn-primary" href="#">Read article</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="blog-filter">
-    <div class="container">
-      <div class="filter-tabs-row">
-        <button class="tab-btn active">All</button>
-        <button class="tab-btn">AI</button>
-        <button class="tab-btn">Programming</button>
-        <button class="tab-btn">Design</button>
-        <button class="tab-btn">Career</button>
-        <button class="tab-btn">Marketing</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="blog-content">
-    <div class="container blog-layout">
-      <div class="blog-grid">
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">Programming</span>
-            <h3>5 Python projects that prove job-ready skills</h3>
-            <p>Build credibility with real-world project ideas and clean repositories.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> A. Thapa</span>
-              <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">Design</span>
-            <h3>UX research methods that students can run in a week</h3>
-            <p>Simple, low-cost techniques to validate ideas before you build.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> S. Rai</span>
-              <span><i class="fa-regular fa-clock"></i> 4 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">AI</span>
-            <h3>AI tools every student should try in 2026</h3>
-            <p>Boost research, coding, and presentations with reliable AI workflows.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> P. KC</span>
-              <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">Marketing</span>
-            <h3>SEO foundations for portfolio websites</h3>
-            <p>Learn the top on-page fixes that drive real traffic growth.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> Talim Team</span>
-              <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">Career</span>
-            <h3>Interview prep checklist for fresh graduates</h3>
-            <p>What to practice, what to show, and how to speak with confidence.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> N. Sharma</span>
-              <span><i class="fa-regular fa-clock"></i> 7 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&w=600&q=80" alt="Post">
-          <div class="card-body">
-            <span class="post-tag">Programming</span>
-            <h3>How to build a clean GitHub profile</h3>
-            <p>Optimize repos, READMEs, and pin the projects that matter.</p>
-            <div class="post-meta">
-              <span><i class="fa-regular fa-user"></i> Talim Team</span>
-              <span><i class="fa-regular fa-clock"></i> 4 min read</span>
-            </div>
-            <a class="link-more" href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-
-      <aside class="blog-sidebar">
-        <div class="sidebar-card">
-          <h4>Popular Posts</h4>
-          <a href="#">UI/UX roadmap for beginners</a>
-          <a href="#">SEO basics for freelancers</a>
-          <a href="#">Best free dev tools in 2026</a>
-        </div>
-        <div class="sidebar-card">
-          <h4>Quick Reads</h4>
-          <a href="#">Resume sections recruiters scan first</a>
-          <a href="#">3 portfolio mistakes to avoid</a>
-          <a href="#">How to pick your first tech stack</a>
-        </div>
-
-        <div class="sidebar-card">
-          <h4>Tags</h4>
-          <div class="tag-cloud">
-            <span>JavaScript</span><span>Career</span><span>AI</span><span>Design</span>
-          </div>
-        </div>
-
-        <div class="sidebar-card">
-          <h4>Weekly Newsletter</h4>
-          <p>Get practical tips and course discounts.</p>
-          <div class="search-box">
-            <input type="email" placeholder="Enter your email">
-            <button class="btn-submit">Subscribe</button>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="blog-pagination">
-    <div class="container">
-      <button class="btn-primary">Load more</button>
-    </div>
-  </section>
-
-  <section class="membership-cta-block">
-    <div class="container">
-      <div class="cta-inner-card">
-        <span class="promo-tag">LIMITED TIME OFFER</span>
-        <h2>Become a Lifetime Member</h2>
-        <p>Get unlimited access to all current and future courses, including recognized certifications and mentor support channels.</p>
-        <button class="btn-primary-dark">Get Started Today</button>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer-layer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
-          <p>Empowering next-generation builders with industry-vetted tech education resources.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="course.html">All Courses</a></li>
-            <li><a href="#">Mentorship Programs</a></li>
-            <li><a href="#">Enterprise Solutions</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About Talim</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Privacy Framework</a></li>
-            <li><a href="#">Refund Metrics</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Talim.com. All engineering rights reserved.</span>
-        <div class="footer-socials">
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
