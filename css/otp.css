@@ -1,0 +1,12 @@
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(180deg, #FDFDFD 0%, #F1F3F6 100%); margin:0; }
+.otp-page { display:flex; justify-content:center; align-items:flex-start; padding-top:40px; }
+.auth-card { margin-top:40px; background:#FFFFFF; padding:40px; border-radius:16px; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(0,0,0,0.08); text-align:center; }
+h1 { font-family: 'Playfair Display', serif; color:#011E41; margin-bottom:8px; }
+.auth-card p { color:#5A6A85; margin-bottom:24px; }
+.input-group { text-align:left; margin-bottom:18px; }
+label { font-weight:600; font-size:14px; color:#011E41; display:block; margin-bottom:8px; }
+input { width:100%; padding:14px 16px; border:1px solid #CBD5E1; border-radius:8px; font-size:16px; box-sizing:border-box; }
+.btn-primary { width:100%; padding:14px; background:#011E41; color:#fff; border:none; border-radius:10px; font-weight:700; cursor:pointer; }
+.btn-secondary { padding:10px 14px; background:#EEF2FF; border:none; border-radius:8px; color:#034694; cursor:pointer; }
+.auth-footer { margin-top:20px; font-size:14px; color:#64748B; }
+.auth-footer a { color:#034694; font-weight:600; text-decoration:none; }
