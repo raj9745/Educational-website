@@ -18,16 +18,14 @@
                 <span class="logo_image" role="img" aria-label="Logo"></span>
             </div>
             <nav class="nav-links">
-                <a href="dashboard.html" class="active">Home</a>
-                <a href="course.html">Courses</a>
-                <a href="blogs.html">Blog</a>
-                <a href="faq.html">FAQ</a>
-                <a href="about.html">About</a>
-                <a href="signed_up_user.html">Account</a>
+                <a href="#" class="active">Home</a>
+                <a href="../html/course.html">Courses</a>
+                <a href="#">About</a>
+                <a href="../html/signed_up_user.html">Account</a>
             </nav>
             <div class="nav-actions">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-primary">Get Started</a>
+                <span id="userGreeting" class="dashboard-user" style="margin-right:12px;color:#fff;font-weight:600"></span>
+                <button id="signOutBtn" class="btn-secondary" style="display:none;">Sign Out</button>
             </div>
         </div>
     </header>
@@ -41,7 +39,7 @@
                 
                 <div class="search-box">
                     <input type="email" placeholder="Enter your email address">
-                    <button class="btn-submit" onclick="window.location.href='register.html'">Sign Up Free</button>
+                    <button class="btn-submit" onclick="window.location.href='../html/not_signed_up_user.html'">Sign Up Free</button>
                 </div>
 
                 <div class="hero-stats">
@@ -150,7 +148,7 @@
             </div>
             
             <div class="view-all-wrapper">
-                <a href="course.html" class="view-all-link">View all 340 courses <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="../html/course.html" class="view-all-link">View all 340 courses <i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </div>
     </section>
@@ -183,7 +181,7 @@
                 </ul>
 
                 <div class="why-us-actions">
-                    <button class="btn-primary-dark" onclick="window.location.href='course.html'">Explore Programs</button>
+                    <button class="btn-primary-dark" onclick="window.location.href='../html/course.html'">Explore Programs</button>
                     <a href="#" class="link-more">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -392,6 +390,7 @@
         </div>
     </footer>
 
+    <script src="../js/dashboard.js"></script>
     <script src="../js/animation.js"></script>
 </body>
 </html>

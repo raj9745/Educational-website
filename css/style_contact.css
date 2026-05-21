@@ -1,0 +1,442 @@
+/* Contact page styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1A202C;
+    background-color: #FAFBFD;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo_image {
+    background-image: url('../assets/tfnd.sd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: inline-block;
+    width: 220px;
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #034694;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn-login {
+    font-weight: 600;
+    color: #1A202C;
+}
+
+.btn-primary {
+    background-color: #034694;
+    color: #FFFFFF;
+    padding: 14px 26px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.btn-primary:hover {
+    background-color: #02336c;
+}
+
+.contact-page {
+    padding: 80px 0 40px;
+}
+
+.contact-hero {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,247,255,1) 100%);
+    padding: 80px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.hero-copy h1,
+.hero-copy h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-copy .section-tagline {
+    display: inline-block;
+    color: #034694;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.hero-copy h1 {
+    font-size: 48px;
+    color: #011E41;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.hero-copy p {
+    max-width: 610px;
+    color: #475569;
+    margin-bottom: 32px;
+    font-size: 17px;
+}
+
+.hero-illustration {
+    margin-bottom: 32px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hero-illustration img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.contact-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.summary-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(3, 70, 148, 0.1);
+    color: #034694;
+    margin-bottom: 18px;
+}
+
+.summary-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0F172A;
+}
+
+.summary-card p {
+    color: #475569;
+    font-size: 15px;
+}
+
+.summary-card,
+.contact-card,
+.detail-panel {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.summary-card:hover,
+.contact-card:hover,
+.detail-panel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+    border-color: #CBD5E1;
+}
+
+.contact-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.06);
+}
+
+.card-header .section-tagline {
+    margin-bottom: 12px;
+}
+
+.card-header h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+    color: #011E41;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.contact-form label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid #CBD5E1;
+    border-radius: 16px;
+    padding: 16px 18px;
+    font-size: 15px;
+    color: #0F172A;
+    background: #F8FAFC;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #034694;
+    background: #FFFFFF;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.contact-details-section {
+    padding: 60px 0 80px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.detail-panel {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 28px;
+}
+
+.detail-panel h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #011E41;
+}
+
+.detail-panel p {
+    color: #475569;
+    line-height: 1.8;
+}
+
+
+
+/* ==========================================================================
+   FOOTER SCHEME (ACCENT STATS BAR + MAIN FOOTER)
+   ========================================================================== */
+.pre-footer-stats {
+    background-color: #034694;
+    color: #fff;
+    padding: 56px 0;
+}
+
+.inline-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.inline-stat-item h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.inline-stat-item p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.main-footer {
+    background-color: #011E41;
+    color: #fff;
+    padding: 96px 0 48px 0;
+    font-size: 16px;
+}
+
+/* Redefined as a centralized single column structural block layout */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 64px;
+    width: 100%;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 580px;
+}
+
+.footer-logo {
+    background-image: url('../assets/footer_fill.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 160px; /* Refined to fit perfectly alongside the expanded typography */
+    width: 280px;                
+    display: inline-block;
+    border-radius: 24px;
+    margin-bottom: 20px; 
+}
+
+.brand-pitch {
+    opacity: 0.8;
+    margin: 16px 0 36px 0;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.newsletter-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-newsletter {
+    display: flex;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 6px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.footer-newsletter input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0 16px;
+    flex-grow: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+}
+
+.footer-newsletter button {
+    background-color: #034694;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #02336c;
+}
+
+/* Baseline Bar Design Configuration Rules */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 24px;
+    font-size: 50px;
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #034694;
+    transform: translateY(-3px);
+}

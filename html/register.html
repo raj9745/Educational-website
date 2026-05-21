@@ -22,21 +22,38 @@
             <h1>Create your account</h1>
             <p>Start your professional learning journey today.</p>
             
-            <form action="#" method="POST">
+            <form id="register-form" action="#" method="POST">
                 <div class="input-group">
                     <label>Full Name</label>
-                    <input type="text" placeholder="John Doe" required>
+                    <input id="fullName" type="text" placeholder="John Doe" required>
                 </div>
                 <div class="input-group">
                     <label>Email Address</label>
-                    <input type="email" placeholder="name@example.com" required>
+                    <input id="email" type="email" placeholder="name@example.com" required>
                 </div>
                 <div class="input-group">
                     <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <div style="position:relative">
+                        <input id="password" type="password" placeholder="••••••••" required>
+                        <button type="button" id="togglePassword" aria-label="Show password" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer">Show</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <div style="position:relative">
+                        <input id="confirmPassword" type="password" placeholder="••••••••" required>
+                        <button type="button" id="toggleConfirmPassword" aria-label="Show confirm password" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer">Show</button>
+                    </div>
                 </div>
                 <button type="submit" class="btn-primary">Create Account</button>
             </form>
+
+            <!-- EmailJS SDK (supported version) -->
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+            <script>
+                emailjs.init('wQoWyu-Yh8vowy0su');
+            </script>
+            <script src="../js/register.js"></script>
 
             <div class="auth-footer">
                 <p>Already have an account? <a href="login.html">Sign in</a></p>
@@ -45,4 +62,4 @@
     </main>
 
 </body>
-</html>
+</html> 
