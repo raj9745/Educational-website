@@ -104,16 +104,46 @@ img {
     padding: 80px 0 40px;
 }
 
-.contact-hero {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,247,255,1) 100%);
-    padding: 80px 0;
-}
+    .contact-logo {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+
+    .contact-logo img {
+        width: clamp(260px, 28vw, 420px);
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: minmax(300px, 1.05fr) minmax(320px, 0.95fr);
     gap: 48px;
-    align-items: start;
+    align-items: stretch;
+}
+
+.contact-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.06);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-illustration {
+    margin-bottom: 32px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    min-height: 360px;
 }
 
 .hero-copy h1,
@@ -232,6 +262,21 @@ img {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 18px;
+}
+
+.form-message {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: #E6FFFA;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+    font-weight: 600;
+    display: none;
+}
+
+.form-message.visible {
+    display: block;
 }
 
 .contact-form label {
@@ -415,12 +460,26 @@ img {
 /* Baseline Bar Design Configuration Rules */
 .footer-bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 14px;
     padding-top: 40px;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.7);
     width: 100%;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-location {
+    font-size: 14px;
+    opacity: 0.9;
 }
 
 .social-icons {
