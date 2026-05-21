@@ -1,0 +1,88 @@
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    /* Neutral sophisticated background with warm light accents */
+    background: 
+        /* Warm light leak from top-right */
+        radial-gradient(circle at 80% 10%, rgba(255, 230, 200, 0.4) 0%, transparent 50%),
+        /* Cool light leak from bottom-left */
+        radial-gradient(circle at 20% 90%, rgba(200, 220, 255, 0.3) 0%, transparent 50%),
+        /* Solid warm-grey base */
+        linear-gradient(180deg, #FDFDFD 0%, #F1F3F6 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Navbar Logo Adjustments */
+.login-nav { padding: 40px 0; text-align: center; }
+
+.logo img {
+    height: 120px; /* Increased for better brand visibility */
+    width: auto;
+    display: inline-block;
+}
+
+.login-page { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 20px; 
+    min-height: 60vh;
+}
+
+/* Card Style */
+.auth-card { 
+    /* Removed large negative margin so it interacts naturally with page flow */
+    margin-top: 10px; 
+    background: #FFFFFF; 
+    padding: 60px; 
+    border-radius: 24px; 
+    width: 100%; 
+    max-width: 440px; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.8);
+    margin-top: -200px;
+}
+
+h1 { 
+    font-family: 'Playfair Display', serif; 
+    color: #011E41; 
+    margin-bottom: 12px; 
+    font-size: 32px;
+}
+
+.auth-card p { color: #5A6A85; margin-bottom: 40px; font-size: 15px; }
+
+/* Input Adjustments */
+.input-group { text-align: left; margin-bottom: 24px; }
+label { font-weight: 600; font-size: 14px; color: #011E41; display: block; margin-bottom: 10px; }
+
+input { 
+    width: 100%; 
+    padding: 18px 20px; 
+    border: 1px solid #CBD5E1; 
+    border-radius: 10px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    display: block;
+}
+
+.btn-primary { 
+    width: 100%; 
+    padding: 18px; 
+    background: #011E41; 
+    color: #fff; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover { background: #034694; }
+
+.auth-footer { margin-top: 30px; font-size: 14px; color: #64748B; }
+.auth-footer a { color: #034694; font-weight: 600; text-decoration: none; }

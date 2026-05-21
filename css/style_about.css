@@ -1,0 +1,613 @@
+/* ==========================================================================
+   INTERACTIVE WORKSPACE SYSTEM STYLES (ABOUT US GLOBAL & FOOTER INTEGRATION)
+   ========================================================================== */
+
+/* Core Resets & Layout Tokens Integration */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1A202C;
+    background-color: #FAFCFF;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+/* Custom UI Badge Components */
+.custom-pill {
+    background: rgba(3, 70, 148, 0.06);
+    color: #034694;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 24px;
+    border: 1px solid rgba(3, 70, 148, 0.1);
+}
+
+.custom-pill-dark {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Shared Header Navigation Extensions */
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo_image {
+    background-image: url('../assets/tfnd.sd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 200px;                 
+    width: 300px;                
+    display: inline-block;
+}
+
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { font-size: 16px; font-weight: 500; color: #5A6A85; text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: #034694; }
+.nav-actions { display: flex; align-items: center; gap: 28px; }
+.btn-login { font-size: 15px; font-weight: 600; color: #1A202C; text-decoration: none; }
+
+.btn-primary {
+    background-color: #034694;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-primary:hover { background-color: #02336c; }
+
+/* ==========================================================================
+   1. ASYMMETRIC ABOUT US HERO LAYOUT
+   ========================================================================== */
+.about-hero-block {
+    padding: 120px 0;
+    background-color: #FFFFFF;
+}
+
+.hero-split-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-text-frame h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    color: #011E41;
+    line-height: 1.15;
+    margin: 0 0 24px 0;
+}
+
+.hero-text-frame .lead-text {
+    font-size: 18px;
+    color: #5A6A85;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.micro-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.micro-stat strong {
+    font-size: 28px;
+    color: #011E41;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.micro-stat span {
+    font-size: 14px;
+    color: #5A6A85;
+    margin-top: 4px;
+}
+
+.hero-visual-frame {
+    position: relative;
+    width: 100%;
+}
+
+.asymmetric-card-stack {
+    position: relative;
+}
+
+.color-accent-backdrop {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(3, 70, 148, 0.03);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.primary-stack-img {
+    position: relative;
+    z-index: 2;
+    border-radius: 16px;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    box-shadow: 0 30px 60px -15px rgba(1, 30, 65, 0.12);
+}
+
+.floating-metric-card {
+    position: absolute;
+    bottom: 30px;
+    left: -40px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    z-index: 3;
+}
+
+.floating-metric-card i {
+    font-size: 20px;
+    color: #028A5A;
+    background: rgba(2, 138, 90, 0.08);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.floating-metric-card h5 {
+    font-size: 15px;
+    color: #011E41;
+    font-weight: 700;
+    margin: 0;
+}
+
+.floating-metric-card p {
+    font-size: 13px;
+    color: #5A6A85;
+    margin: 2px 0 0 0;
+}
+
+/* ==========================================================================
+   2. MILESTONE ARCHITECTURE TIMELINE BLOCK
+   ========================================================================== */
+.milestone-matrix-section {
+    padding: 100px 0;
+    background-color: #011E41;
+    color: #FFFFFF;
+}
+
+.center-heading-block {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px auto;
+}
+
+.center-heading-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+.timeline-row-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.timeline-node {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 32px;
+    border-radius: 16px;
+    transition: background 0.3s ease;
+}
+
+.timeline-node:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.node-year {
+    font-size: 14px;
+    font-weight: 800;
+    color: #034694;
+    background: #FFFFFF;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.node-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #FFFFFF;
+}
+
+.node-card p {
+    font-size: 15px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   3. EXECUTIVE BOARD BLOCKS MATRIX
+   ========================================================================== */
+.executive-board-section {
+    padding: 120px 0;
+    background-color: #FAFCFF;
+}
+
+.left-aligned-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    gap: 60px;
+}
+
+.left-aligned-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #011E41;
+    margin: 0;
+}
+
+.header-para-aside {
+    font-size: 16px;
+    color: #5A6A85;
+    max-width: 520px;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+}
+
+.executive-flex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.exec-profile-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exec-profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -10px rgba(1, 30, 65, 0.08);
+}
+
+.profile-image-mask {
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #F1F5F9;
+}
+
+.profile-image-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.exec-profile-card:hover .profile-image-mask img {
+    transform: scale(1.04);
+}
+
+.exec-meta-data {
+    padding: 32px;
+}
+
+.exec-meta-data h4 {
+    font-size: 22px;
+    color: #011E41;
+    font-weight: 700;
+    margin: 0;
+}
+
+.exec-role {
+    font-size: 13px;
+    font-weight: 700;
+    color: #034694;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-top: 4px;
+}
+
+.exec-divider {
+    height: 1px;
+    background: #E2E8F0;
+    margin: 20px 0;
+}
+
+.exec-meta-data p {
+    font-size: 14px;
+    color: #5A6A85;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   4. PRE-FOOTER STATS COUNTERS ROLLUP
+   ========================================================================== */
+.pre-footer-stats {
+    background: linear-gradient(135deg, #011E41, #034694);
+    color: #fff;
+    padding: 56px 0;
+}
+
+.inline-stats { 
+    display: flex; 
+    justify-content: space-around; 
+    text-align: center; 
+}
+
+.inline-stat-item h3 { 
+    font-size: 40px; 
+    font-weight: 700; 
+    color: #FFFFFF; 
+    margin: 0;
+}
+
+.inline-stat-item p { 
+    font-size: 15px; 
+    color: #E2E8F0; 
+    opacity: 0.9; 
+    margin: 4px 0 0 0; 
+}
+
+
+/* ==========================================================================
+   5. PRODUCTION MULTI-COLUMN FOOTER SYSTEM WITH MAP HUB
+   ========================================================================== */
+.main-footer { 
+    background-color: #011E41; 
+    color: #fff; 
+    padding: 96px 0 48px 0; 
+    font-size: 16px; 
+    border-top: 1px solid #E2E8F0;
+}
+
+.footer-grid-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1.2fr;
+    gap: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Brand Meta Display Adjustments */
+.footer-logo { 
+    background-image: url('../assets/footer_fill.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: left center; 
+    height: 100px; 
+    width: 200px; 
+    display: inline-block; 
+    border-radius: 12px; 
+    margin-bottom: 12px; 
+}
+
+.brand-pitch { 
+    color: #94A3B8; 
+    margin: 12px 0 28px 0; 
+    line-height: 1.6; 
+    font-size: 15px; 
+}
+
+.newsletter-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; }
+.footer-newsletter { display: flex; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 5px; border-radius: 8px; width: 100%; }
+.footer-newsletter input { background: transparent; border: none; outline: none; color: #fff; padding: 0 14px; flex-grow: 1; font-family: inherit; font-size: 14px; }
+.footer-newsletter button { background-color: #034694; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; }
+
+/* Contact Presentation Grid Blocks */
+.node-description {
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer-detail-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.f-detail-row {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+}
+
+.f-detail-row i {
+    font-size: 16px;
+    color: #034694;
+    background: rgba(255, 255, 255, 0.04);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.f-detail-row h5 {
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin: 0 0 2px 0;
+}
+
+.f-detail-row p {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Integrated Footer Leaflet UI Constraints */
+.footer-map-wrapper {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    min-height: 350px; /* Increased from 260px */
+    width: 700px;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%; /* Spans explicitly to the bounds of wrapper */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* Overwriting Leaflet internals to integrate with dark mode workspace palette */
+.leaflet-bar { border: none !important; box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important; }
+.leaflet-bar a { background-color: #011E41 !important; color: #FFFFFF !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+.leaflet-bar a:hover { background-color: #034694 !important; }
+
+/* Baseline Strip Rules */
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; font-size: 15px; color: #94A3B8; }
+.social-icons { display: flex; gap: 16px; }
+.social-icons a { color: #64748B; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.2s; }
+.social-icons a:hover { color: #FFFFFF; background-color: #034694; }
+
+/* ==========================================================================
+   6. FOOTER COUPLING BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1150px) {
+    .footer-grid-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .footer-column.map-panel {
+        grid-column: span 2;
+    }
+    .footer-map-wrapper {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-split-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    .action-row { justify-content: center; }
+    .primary-stack-img { height: 380px; max-width: 540px; margin: 0 auto; }
+    .floating-metric-card { left: 50%; transform: translateX(-50%); bottom: -20px; }
+    .color-accent-backdrop { display: none; }
+    .left-aligned-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .timeline-row-layout { grid-template-columns: 1fr; gap: 24px; }
+    .executive-flex-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (max-width: 768px) {
+    .hero-text-frame h1 { font-size: 38px; }
+    .executive-flex-grid { grid-template-columns: 1fr; }
+    .inline-stats { flex-direction: column; gap: 32px; }
+    
+    .footer-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .footer-column.map-panel {
+        grid-column: span 1;
+    }
+    .footer-logo { background-position: center center; margin: 0 auto 12px auto; }
+    .footer-column { text-align: center; align-items: center; }
+    .f-detail-row { text-align: left; }
+    .footer-newsletter { max-width: 400px; }
+    .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+}
