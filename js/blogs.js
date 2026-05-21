@@ -114,3 +114,164 @@ function suscribe(){
     popup.innertext= `Thank you for subscribing with ${email}! You'll receive weekly updates.`;
     document.getElementById('popup').style.display = 'block';
 }
+
+// popup message for the user when they click on the subscribe button
+  // ================================
+  // EmailJS Configuration
+  // ================================
+  const EMAILJS_CONFIG = {
+    publicKey: "fe5Kh-Q74vquPL5dn",
+    serviceId: "service_h7gz6zi",
+    templateId: "template_qe663dp"
+  };
+
+  // ================================
+  // DOM Elements
+  // ================================
+  const emailInput   = document.getElementById("emailInput");
+  const errorMessage = document.getElementById("errorMessage");
+  const popupBox     = document.getElementById("popup");
+  const popupText    = document.getElementById("popupText");
+
+  // ================================
+  // Initialize EmailJS
+  // ================================
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+
+  // ================================
+  // Subscribe Function
+  // ================================
+  async function subscribe() {
+
+    const email = emailInput.value.trim();
+
+    // Empty validation
+    if (!email) {
+      showError("Please enter your email.");
+      return;
+    }
+
+    // Email format validation
+    if (!isValidEmail(email)) {
+      showError("Please enter a valid email address.");
+      return;
+    }
+
+    clearError();
+
+    try {
+
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          user_email: email
+        }
+      );
+
+      showSuccessPopup(email);
+
+      // Clear input field
+      emailInput.value = "";
+
+    } catch (error) {
+
+      console.error("EmailJS Error:", error);
+
+      showError(
+        "Failed to send email. Please try again later."
+      );
+
+    }
+  }
+
+  // ================================
+  // Email Validation
+  // ================================
+  function isValidEmail(email) {
+
+    const emailRegex =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailRegex.test(email);
+  }
+
+  // ================================
+  // Show Error Message
+  // ================================
+  function showError(message) {
+
+    errorMessage.textContent = message;
+  }
+
+  // ================================
+  // Clear Error Message
+  // ================================
+  function clearError() {
+
+    errorMessage.textContent = "";
+  }
+
+  // ================================
+  // Success Popup
+  // ================================
+  function showSuccessPopup(email) {
+
+    popupText.textContent =
+      `Thank you for subscribing with ${email}! You'll receive weekly updates.`;
+
+    popupBox.style.display = "block";
+  }
+
+  // ================================
+  // Close Popup
+  // ================================
+  function closePopup() {
+
+    popupBox.style.display = "none";
+  }
+
+   // ===== Footer Newsletter Subscribe =====
+const footerEmailInput = document.getElementById("footerEmailInput");
+const footerJoinButton = document.getElementById("footerJoinBtn");
+const footerNewsletterMessage = document.getElementById("footerNewsletterMessage");
+
+if (footerJoinButton && footerEmailInput) {
+  footerJoinButton.addEventListener("click", handleFooterSubscribe);
+}
+
+function handleFooterSubscribe() {
+  const email = footerEmailInput.value.trim();
+
+  if (!email) {
+    showFooterMessage("Please enter your email address.", "red");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    showFooterMessage("Please enter a valid email address.", "red");
+    return;
+  }
+
+  emailjs
+    .send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
+      user_email: email
+    })
+    .then(() => {
+      showFooterMessage(
+        `Thank you for subscribing with ${email}! Check your inbox for updates.`,
+        "lightgreen"
+      );
+      footerEmailInput.value = "";
+    })
+    .catch((error) => {
+      console.error("Footer newsletter EmailJS error:", error);
+      showFooterMessage("Failed to send subscription email. Please try again.", "red");
+    });
+}
+
+function showFooterMessage(message, color) {
+  if (!footerNewsletterMessage) return;
+  footerNewsletterMessage.textContent = message;
+  footerNewsletterMessage.style.color = color;
+}

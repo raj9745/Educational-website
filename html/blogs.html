@@ -241,78 +241,7 @@
 </div>
 
 <!-- EmailJS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-
-  // Initialize EmailJS
-  emailjs.init("YOUR_PUBLIC_KEY");
-
-  // Subscribe function
-  function subscribe() {
-
-    const email =
-      document.getElementById("emailInput").value;
-
-    const error =
-      document.getElementById("errorMessage");
-
-    // Empty validation
-    if (email.trim() === "") {
-
-      error.innerText =
-        "Please enter your email.";
-
-      return;
-    }
-
-    // Clear error
-    error.innerText = "";
-
-    // Send Email
-    emailjs.send(
-      "service_k5otg6c",
-      "YOUR_TEMPLATE_ID",
-      {
-        user_email: email
-      }
-    )
-
-    .then(function(response) {
-
-      // Show popup
-      document.getElementById("popupText").innerText =
-        "Thank you for subscribing with " +
-        email +
-        ". You'll receive weekly updates.";
-
-      document.getElementById("popup").style.display =
-        "block";
-
-      // Clear input
-      document.getElementById("emailInput").value = "";
-
-    })
-
-    .catch(function(error) {
-
-      alert("Failed to send email.");
-
-      console.log(error);
-
-    });
-
-  }
-
-  // Close popup
-  function closePopup() {
-
-    document.getElementById("popup").style.display =
-      "none";
-
-  }
-
-</script>
+/script>
 
   <div class="pre-footer-stats">
     <div class="container inline-stats">
@@ -345,11 +274,12 @@
             Empowering learners worldwide with structured tracks, real-world projects, and direct access to industry experts.
           </p>
 
-          <div class="newsletter-title">Subscribe to our newsletter</div>
-          <div class="footer-newsletter">
-            <input type="email" placeholder="Your email address">
-            <button type="button">Join</button>
-          </div>
+         <div class="newsletter-title">Subscribe to our newsletter</div>
+        <div class="footer-newsletter">
+          <input type="email" id="footerEmailInput" placeholder="Your email address">
+          <button type="button" id="footerJoinBtn">Join</button>
+        </div>
+        <p id="footerNewsletterMessage" style="margin-top:10px;color:#fff;"></p>
         </div>
       </div>
 
@@ -365,6 +295,9 @@
       </div>
     </div>
   </footer>
+<!-- email CDN -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <script src="../js/blogs.js"></script>
 </body>
