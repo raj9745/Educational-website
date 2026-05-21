@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Talim.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=600&family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/signed_up_user.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="dashboard.html">Home</a>
+                <a href="course.html">Courses</a>
+                <a href="#">Mentors</a>
+                <a href="#" class="active">My Account</a>
+            </nav>
+            <div class="nav-actions">
+                <span class="user-greeting">Hi, Ram!</span>
+                <a href="../html/dashboard.html" class="btn-logout-header">Sign Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container account-layout">
+        <aside class="account-sidebar">
+            <div class="profile-card">
+                <div class="avatar-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Ram Bahadur</h3>
+                <p>Student Member</p>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard Metrics</a>
+                <a href="#"><i class="fa-solid fa-book-open"></i> My Active Courses</a>
+                <a href="#"><i class="fa-solid fa-certificate"></i> Certificates</a>
+                <a href="#"><i class="fa-solid fa-credit-card"></i> Payment Ledger</a>
+                <a href="#"><i class="fa-solid fa-sliders"></i> Security Settings</a>
+            </nav>
+        </aside>
+
+        <div class="account-main-content">
+            <h1 class="welcome-heading">Workspace Overview</h1>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="metric-info">
+                        <strong>3 Courses</strong>
+                        <p>Total Enrolled</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon-box warning"><i class="fa-solid fa-clock"></i></div>
+                    <div class="metric-info">
+                        <strong>18.5 Hours</strong>
+                        <p>Learning Track Time</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon-box success"><i class="fa-solid fa-award"></i></div>
+                    <div class="metric-info">
+                        <strong>1 Earned</strong>
+                        <p>Certifications</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="progress-section">
+                <h2>Active Course Progress Tracking</h2>
+                
+                <div class="course-progress-bar-card">
+                    <div class="card-meta-row">
+                        <div>
+                            <h3>Mastering Python: From Basics to Advanced</h3>
+                            <p class="instructor-sub">Instructor: talim.com Team</p>
+                        </div>
+                        <span class="percentage-badge">75% Complete</span>
+                    </div>
+                    <div class="progress-track-wrapper">
+                        <div class="progress-track-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="card-footer-row">
+                        <span><i class="fa-solid fa-circle-play"></i> 36 of 48 Modules Complete</span>
+                        <a href="#" class="btn-resume-course">Resume Module</a>
+                    </div>
+                </div>
+
+                <div class="course-progress-bar-card">
+                    <div class="card-meta-row">
+                        <div>
+                            <h3>UI/UX Design Masterclass</h3>
+                            <p class="instructor-sub">Instructor: talim.com Team</p>
+                        </div>
+                        <span class="percentage-badge danger">12% Complete</span>
+                    </div>
+                    <div class="progress-track-wrapper">
+                        <div class="progress-track-fill danger" style="width: 12%;"></div>
+                    </div>
+                    <div class="card-footer-row">
+                        <span><i class="fa-solid fa-circle-play"></i> 7 of 60 Modules Complete</span>
+                        <a href="#" class="btn-resume-course">Resume Module</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-layer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+                    <p>Empowering next-generation builders with industry-vetted tech education resources.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="course.html">All Courses</a></li>
+                        <li><a href="#">Mentorship Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Talim</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Framework</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Talim.com. All engineering rights reserved.</span>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
