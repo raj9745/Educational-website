@@ -135,25 +135,16 @@ h2 {
     width: 100%;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.logo-box {
-    background-color: var(--primary-blue);
-    color: #fff;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 16px;
-}
 
-.logo-text {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--dark-navy);
+.logo_image{
+    background-image: url('./tfnd.sd.png');
+    background-size: contain;    /* Force the image to scale down perfectly without clipping */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;                 /* Adjusted to fit perfectly within your 80px navbar */
+    width: 300px;                 /* Adjusted width to maintain your logo's aspect ratio */
+    display: inline-block;        /* Allows the span to respect height and width settings */
 }
 
 .nav-links {
