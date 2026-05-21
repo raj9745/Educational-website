@@ -1,0 +1,293 @@
+/* ==========================================================================
+   COURSE PROFILE PAGES & STICKY BUY COLUMN SIDEBAR LAYOUT
+   ========================================================================== */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px 24px;
+    align-items: start;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #5A6A85;
+    margin-bottom: 16px;
+}
+.breadcrumb a { 
+    color: #034694; 
+    text-decoration: none;
+}
+.breadcrumb a:hover { 
+    text-decoration: underline; 
+}
+
+.main-info-column h1 {
+    font-size: 38px;
+    color: #011E41;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.course-quick-stats {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: #5A6A85;
+}
+#course-instructor-wrapper {
+    margin-right: 24px;
+    font-weight: 600;
+    color: #034694;
+}
+.rating-badge { margin-right: 24px; }
+.rating-badge i { color: #FF9F43; margin-right: 4px; }
+
+.video-preview-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    background: #000000;
+}
+.video-preview-box img {
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: cover;
+    opacity: 0.85;
+    display: block;
+}
+.play-overlay-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.play-overlay-btn:hover { 
+    transform: translate(-50%, -50%) scale(1.1); 
+}
+
+.info-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 30px;
+}
+.info-card h2 { 
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    color: #011E41; 
+}
+#course-description {
+    line-height: 1.6;
+    color: #2D3748;
+}
+
+.features-highlights {
+    display: flex;
+    gap: 30px;
+    margin-top: 24px;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 24px;
+}
+.highlight-item { display: flex; gap: 14px; align-items: start; }
+.highlight-item i { 
+    font-size: 20px; 
+    color: #034694; 
+    background: #F3F6F9; 
+    padding: 12px; 
+    border-radius: 8px; 
+}
+.highlight-item strong { display: block; color: #011E41; font-size: 15px; margin-bottom: 2px;}
+.highlight-item p { font-size: 13px; color: #5A6A85; margin: 0; }
+
+.target-learn-box { background-color: #011E41; color: #FFFFFF; }
+.target-learn-box h2 { color: #FFFFFF; }
+.checkmark-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.checkmark-grid li { display: flex; gap: 12px; align-items: start; font-size: 15px; opacity: 0.95; }
+.checkmark-grid i { color: #27AE60; font-size: 18px; margin-top: 2px; }
+
+/* Sticky Buy Panel Card Sidebar Container Component */
+.purchase-sidebar-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 120px;
+}
+.pricing-header-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+.discount-price { font-size: 32px; font-weight: 700; color: #011E41; }
+.original-strike { text-decoration: line-through; color: #5A6A85; font-size: 16px; }
+
+.btn-enroll-action { 
+    width: 100%; 
+    background: #028A5A; 
+    color: #FFFFFF; 
+    border: none; 
+    padding: 16px; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    font-size: 16px; 
+    cursor: pointer; 
+    margin-bottom: 12px; 
+    transition: background 0.2s; 
+}
+.btn-enroll-action:hover { background: #016F47; }
+
+.btn-share-action { 
+    width: 100%; 
+    background: transparent; 
+    border: 1px solid #E2E8F0; 
+    color: #1A202C; 
+    padding: 12px; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background 0.2s;
+}
+.btn-share-action:hover { background: #F8FAFC; }
+
+.inclusion-checklist h3 { font-size: 16px; margin: 24px 0 14px 0; color: #011E41; }
+.inclusion-checklist ul { list-style: none; padding: 0; margin: 0; }
+.inclusion-checklist ul li { display: flex; gap: 12px; font-size: 14px; color: #5A6A85; margin-bottom: 12px; align-items: center; }
+.inclusion-checklist i { color: #034694; width: 16px; text-align: center; }
+
+/* ==========================================================================
+   MODAL DIALOG CHECKOUT SYSTEM INTERFACE OVERLAY STYLES
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 30, 65, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.enroll-modal-card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    padding: 32px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    border: 1px solid #E2E8F0;
+}
+.modal-overlay.active .enroll-modal-card {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: #F3F6F9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5A6A85;
+    transition: all 0.2s;
+}
+.modal-close-btn:hover {
+    background: #E2E8F0;
+    color: #011E41;
+}
+
+.modal-header h2 { font-size: 22px; color: #011E41; margin-bottom: 8px; font-weight: 700; }
+.modal-header p { color: #5A6A85; font-size: 14px; margin-bottom: 24px; line-height: 1.4; }
+
+.enroll-form-group { margin-bottom: 20px; }
+.enroll-form-group label { display: block; font-size: 14px; font-weight: 600; color: #1A202C; margin-bottom: 8px; }
+.enroll-form-group input, .enroll-form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #1A202C;
+    background: #F8FAFC;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+.enroll-form-group input:focus, .enroll-form-group select:focus {
+    outline: none;
+    border-color: #034694;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(3, 70, 148, 0.1);
+}
+
+.modal-summary-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+.summary-row { display: flex; justify-content: space-between; font-size: 14px; color: #5A6A85; margin-bottom: 8px; }
+.summary-row.total {
+    margin-bottom: 0;
+    padding-top: 12px;
+    border-top: 1px dashed #E2E8F0;
+    font-weight: 700;
+    color: #011E41;
+    font-size: 16px;
+}
+
+.btn-submit-enrollment {
+    width: 100%;
+    background: #034694;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-submit-enrollment:hover { background: #02336C; }
+
+/* Responsive break limits adjustments */
+@media(max-width: 992px) {
+    .detail-layout { grid-template-columns: 1fr; gap: 30px; }
+    .purchase-sidebar-card { position: relative; top: 0; }
+    .checkmark-grid { grid-template-columns: 1fr; }
+    .main-info-column h1 { font-size: 30px; }
+}

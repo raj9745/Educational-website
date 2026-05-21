@@ -4,20 +4,465 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Details - Talim.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/course_style.css">
+    
+    <style>
+        /* ==========================================================================
+           1. ROOT INITIALIZATIONS AND GENERAL LAYOUT DEFINE
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8FAFC;
+            color: #1A202C;
+            line-height: 1.5;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ==========================================================================
+           2. HEADER COMPONENT NAVIGATION STYLES
+           ========================================================================== */
+        .navbar {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E2E8F0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo_image {
+            display: block;
+            width: 120px;
+            height: 40px;
+            background: #011E41; /* Fallback placeholder color badge */
+            border-radius: 6px;
+        }
+        .nav-links a {
+            color: #5A6A85;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 28px;
+            transition: color 0.2s;
+        }
+        .nav-links a.active, .nav-links a:hover {
+            color: #034694;
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .btn-login {
+            color: #011E41;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background: #034694;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover {
+            background: #02336C;
+        }
+
+        /* ==========================================================================
+           3. MAIN LAYOUT AND TWO-COLUMN INTERFACE SYSTEM GRID
+           ========================================================================== */
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 40px 24px;
+            align-items: start;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: #5A6A85;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a { 
+            color: #034694; 
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { 
+            text-decoration: underline; 
+        }
+        .main-info-column h1 {
+            font-size: 38px;
+            color: #011E41;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+        .course-quick-stats {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 15px;
+            margin-bottom: 30px;
+            color: #5A6A85;
+        }
+        #course-instructor-wrapper {
+            margin-right: 24px;
+            font-weight: 600;
+            color: #034694;
+        }
+        .rating-badge { margin-right: 24px; }
+        .rating-badge i { color: #FF9F43; margin-right: 4px; }
+
+        /* ==========================================================================
+           4. LABELS AND FEATURE CARDS INFRASTRUCTURES
+           ========================================================================== */
+        .video-preview-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            background: #000000;
+            aspect-ratio: 16 / 9; /* Ensures container dimensions stay uniform */
+            width: 100%;
+        }
+        .video-preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        .video-preview-box.playing img,
+        .video-preview-box.playing .play-overlay-btn {
+            display: none; /* Safely clear away the placeholder layer when playing */
+        }
+        .video-preview-box video {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-preview-box.playing video {
+            display: block; /* Mount active element track container */
+        }
+        .play-overlay-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 64px;
+            color: #FFFFFF;
+            cursor: pointer;
+            z-index: 5;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .play-overlay-btn:hover { 
+            transform: translate(-50%, -50%) scale(1.1); 
+            color: #034694;
+        }
+        .info-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 30px;
+        }
+        .info-card h2 { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            color: #011E41; 
+        }
+        #course-description {
+            line-height: 1.6;
+            color: #2D3748;
+        }
+        .features-highlights {
+            display: flex;
+            gap: 30px;
+            margin-top: 24px;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 24px;
+        }
+        .highlight-item { display: flex; gap: 14px; align-items: start; }
+        .highlight-item i { 
+            font-size: 20px; 
+            color: #034694; 
+            background: #F3F6F9; 
+            padding: 12px; 
+            border-radius: 8px; 
+        }
+        .highlight-item strong { display: block; color: #011E41; font-size: 15px; margin-bottom: 2px;}
+        .highlight-item p { font-size: 13px; color: #5A6A85; margin: 0; }
+
+        .target-learn-box { background-color: #011E41; color: #FFFFFF; }
+        .target-learn-box h2 { color: #FFFFFF; }
+        .checkmark-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 24px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .checkmark-grid li { display: flex; gap: 12px; align-items: start; font-size: 15px; opacity: 0.95; }
+        .checkmark-grid i { color: #27AE60; font-size: 18px; margin-top: 2px; }
+
+        /* ==========================================================================
+           5. SIDEBAR WIDGET AND INTERACTION CONTROL BAR BUTTONS
+           ========================================================================== */
+        .purchase-sidebar-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 120px;
+        }
+        .pricing-header-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+        .discount-price { font-size: 32px; font-weight: 700; color: #011E41; }
+        .original-strike { text-decoration: line-through; color: #5A6A85; font-size: 16px; }
+
+        .btn-enroll-action { 
+            width: 100%; 
+            background: #028A5A; 
+            color: #FFFFFF; 
+            border: none; 
+            padding: 16px; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-bottom: 12px; 
+            transition: background 0.2s; 
+        }
+        .btn-enroll-action:hover { background: #016F47; }
+        .btn-share-action { 
+            width: 100%; 
+            background: transparent; 
+            border: 1px solid #E2E8F0; 
+            color: #1A202C; 
+            padding: 12px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: background 0.2s;
+        }
+        .btn-share-action:hover { background: #F8FAFC; }
+
+        .inclusion-checklist h3 { font-size: 16px; margin: 24px 0 14px 0; color: #011E41; }
+        .inclusion-checklist ul { list-style: none; padding: 0; margin: 0; }
+        .inclusion-checklist ul li { display: flex; gap: 12px; font-size: 14px; color: #5A6A85; margin-bottom: 12px; align-items: center; }
+        .inclusion-checklist i { color: #034694; width: 16px; text-align: center; }
+
+        /* ==========================================================================
+           6. SYSTEM MODAL INTERFACE COMPONENTS LAYOUT (DASHBOARD CONSISTENT)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 30, 65, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .enroll-modal-card {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            padding: 32px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        .modal-overlay.active .enroll-modal-card {
+            transform: translateY(0);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: #F3F6F9;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5A6A85;
+            transition: all 0.2s;
+        }
+        .modal-close-btn:hover {
+            background: #E2E8F0;
+            color: #011E41;
+        }
+        .modal-header h2 { font-size: 22px; color: #011E41; margin-bottom: 8px; font-weight: 700; }
+        .modal-header p { color: #5A6A85; font-size: 14px; margin-bottom: 24px; line-height: 1.4; }
+
+        .enroll-form-group { margin-bottom: 20px; }
+        .enroll-form-group label { display: block; font-size: 14px; font-weight: 600; color: #1A202C; margin-bottom: 8px; }
+        .enroll-form-group input, .enroll-form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            color: #1A202C;
+            background: #F8FAFC;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+        .enroll-form-group input:focus, .enroll-form-group select:focus {
+            outline: none;
+            border-color: #034694;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(3, 70, 148, 0.1);
+        }
+        .modal-summary-box {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .summary-row { display: flex; justify-content: space-between; font-size: 14px; color: #5A6A85; margin-bottom: 8px; }
+        .summary-row.total {
+            margin-bottom: 0;
+            padding-top: 12px;
+            border-top: 1px dashed #E2E8F0;
+            font-weight: 700;
+            color: #011E41;
+            font-size: 16px;
+        }
+        .btn-submit-enrollment {
+            width: 100%;
+            background: #034694;
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit-enrollment:hover { background: #02336C; }
+
+        /* ==========================================================================
+           7. SUCCESS DISPLAY NOTIFICATION CARD PANEL VIEW OVERLAYS
+           ========================================================================== */
+        .success-modal-card {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid #E2E8F0;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.active .success-modal-card {
+            transform: scale(1);
+        }
+        .success-icon-badge {
+            font-size: 64px;
+            color: #27AE60;
+            margin-bottom: 20px;
+            animation: iconPop 0.4s ease-in-out;
+        }
+        .success-modal-card h2 {
+            font-size: 24px;
+            color: #011E41;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .success-modal-card p {
+            color: #5A6A85;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+        }
+        .btn-success-acknowledge {
+            background: #27AE60;
+            color: #FFFFFF;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-success-acknowledge:hover {
+            background: #1E8449;
+        }
+
+        @keyframes iconPop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsive Break Configurations UI adjustment bounds */
+        @media(max-width: 992px) {
+            .detail-layout { grid-template-columns: 1fr; gap: 30px; }
+            .purchase-sidebar-card { position: relative; top: 0; }
+            .checkmark-grid { grid-template-columns: 1fr; }
+            .main-info-column h1 { font-size: 30px; }
+        }
+    </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="home.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+                <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
             </div>
             <nav class="nav-links">
-                <a href="home.html">Home</a>
-                <a href="courses.html" class="active">Courses</a>
+                <a href="dashboard.html">Home</a>
+                <a href="course.html" class="active">Courses</a>
                 <a href="#">Mentors</a>
                 <a href="#">About</a>
             </nav>
@@ -31,50 +476,54 @@
     <main class="container detail-layout">
         <div class="main-info-column">
             <nav class="breadcrumb">
-                <a href="home.html">Home</a> &gt; <a href="courses.html">Courses</a> &gt; <span id="breadcrumb-current">AI & Machine Learning</span>
+                <a href="dashboard.html">Home</a> &gt; <a href="course.html">Courses</a> &gt; <span id="breadcrumb-current">Loading Course...</span>
             </nav>
 
-            <h1 id="course-title">AI & Machine Learning Fundamentals</h1>
+            <h1 id="course-title">Loading Title...</h1>
             
             <div class="course-quick-stats">
-                <span class="rating-badge"><i class="fa-solid fa-star"></i> <span id="course-rating">4.9</span> (1,240 reviews)</span>
-                <span class="student-count"><i class="fa-solid fa-user-group"></i> <span id="course-students">4,500+</span> Students enrolled</span>
+                <span id="course-instructor-wrapper">
+                    <i class="fa-solid fa-chalkboard-user"></i> <span id="course-instructor">Loading...</span>
+                </span>
+                <span class="rating-badge"><i class="fa-solid fa-star"></i> <span id="course-rating">0.0</span> (Reviews)</span>
+                <span class="student-count"><i class="fa-solid fa-user-group"></i> <span id="course-students">0</span> Students enrolled</span>
             </div>
 
-            <div class="video-preview-box">
-                <img id="course-cover" src="" alt="Course Cover Video Placeholder">
-                <div class="play-overlay-btn"><i class="fa-solid fa-circle-play"></i></div>
+            <div class="video-preview-box" id="preview-box-container">
+                <img id="course-cover" src="" alt="Course Cover Placeholder">
+                <div class="play-overlay-btn" id="trigger-play-video"><i class="fa-solid fa-circle-play"></i></div>
+                <video id="course-main-video" controls src=""></video>
             </div>
 
             <section class="info-card">
                 <h2>About Course</h2>
-                <p id="course-description">Master the foundations of Artificial Intelligence and Machine Learning...</p>
+                <p id="course-description">Loading course description parameters...</p>
                 <div class="features-highlights">
-                    <div class="highlight-item"><i class="fa-solid fa-graduation-cap"></i> <div><strong>Industry Standard</strong><p>Curriculum vetted by top AI engineers</p></div></div>
-                    <div class="highlight-item"><i class="fa-solid fa-code"></i> <div><strong>Hands-on Labs</strong><p>Build 5 real-world applications</p></div></div>
+                    <div class="highlight-item"><i class="fa-solid fa-graduation-cap"></i> <div><strong>Industry Standard</strong><p>Curriculum vetted by domain expert engineers</p></div></div>
+                    <div class="highlight-item"><i class="fa-solid fa-code"></i> <div><strong>Hands-on Labs</strong><p>Build real-world milestone applications</p></div></div>
                 </div>
             </section>
 
             <section class="info-card target-learn-box">
                 <h2>What you'll learn</h2>
                 <ul class="checkmark-grid" id="learning-objectives">
-                    </ul>
+                </ul>
             </section>
         </div>
 
         <aside class="purchase-sidebar-card">
             <div class="pricing-header-row">
-                <span class="discount-price" id="panel-price">NPR 8,500</span>
-                <span class="original-strike" id="panel-old-price">NPR 12,000</span>
+                <span class="discount-price" id="panel-price">NPR 0</span>
+                <span class="original-strike" id="panel-old-price">NPR 0</span>
             </div>
             
-            <button class="btn-enroll-action">Enroll Now</button>
+            <button class="btn-enroll-action" id="open-enroll-modal">Enroll Now</button>
             <button class="btn-share-action"><i class="fa-solid fa-share-nodes"></i> Share Course</button>
 
             <div class="inclusion-checklist">
                 <h3>This course includes:</h3>
                 <ul>
-                    <li><i class="fa-solid fa-display"></i> <span id="inc-hours">40+ hours of live sessions</span></li>
+                    <li><i class="fa-solid fa-display"></i> <span id="inc-hours">Live Interactive Sessions</span></li>
                     <li><i class="fa-solid fa-certificate"></i> Professional Certificate</li>
                     <li><i class="fa-solid fa-download"></i> 12 Downloadable resources</li>
                     <li><i class="fa-solid fa-clipboard-question"></i> 15 Quizzes & Assignments</li>
@@ -84,55 +533,210 @@
         </aside>
     </main>
 
+    <div class="modal-overlay" id="enrollment-modal">
+        <div class="enroll-modal-card">
+            <button class="modal-close-btn" id="close-enroll-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h2>Course Enrollment</h2>
+                <p>Complete your details to access the premium student dashboard environment.</p>
+            </div>
+            <form id="enroll-form">
+                <div class="enroll-form-group">
+                    <label for="student-name">Full Name</label>
+                    <input type="text" id="student-name" placeholder="E.g., Ram Bahadur" required>
+                </div>
+                <div class="enroll-form-group">
+                    <label for="student-email">Email Address</label>
+                    <input type="email" id="student-email" placeholder="name@example.com" required>
+                </div>
+                <div class="enroll-form-group">
+                    <label for="payment-method">Preferred Gateway</label>
+                    <select id="payment-method" required>
+                        <option value="esewa">eSewa Wallet</option>
+                        <option value="khalti">Khalti Digital SDK</option>
+                        <option value="connectips">connectIPS Secure Transfer</option>
+                    </select>
+                </div>
+                <div class="modal-summary-box">
+                    <div class="summary-row">
+                        <span>Course Selected:</span>
+                        <strong id="modal-summary-title">Course Title</strong>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Payable Fees:</span>
+                        <span id="modal-summary-price">NPR 0</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit-enrollment">Confirm Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="success-modal">
+        <div class="success-modal-card">
+            <div class="success-icon-badge">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>SUCCESSFULLY ENROLLED</h2>
+            <p>Your registration profile has been recorded. You are now being granted immediate access to your workspace metrics layer.</p>
+            <button class="btn-success-acknowledge" id="btn-success-close">Go to Dashboard</button>
+        </div>
+    </div>
+
     <script>
-        // Dictionary dataset mimicking database storage mapping handles
+        // Database expanded with sample preview videos for each unique target course key
         const courseDatabase = {
             "python": {
                 title: "Mastering Python: From Basics to Advanced",
+                instructor: "talim.com Team",
                 price: "NPR 1,000",
                 oldPrice: "NPR 3,000",
                 rating: "4.9",
-                students: "12,450",
+                students: "12450",
                 image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
-                desc: "Master Python programing from absolute ground zero. Learn algorithms, data cleaning operations, backend scripting logic structures, and standard real-world deployment frameworks optimized for scalable applications.",
-                hours: "48+ hours of live sessions",
-                objectives: ["Master Python for Data Science and ML", "Build advanced script automations", "Understand backend architecture", "Deploy scalable data modules"]
+                video: "https://www.w3schools.com/html/mov_bbb.mp4",
+                desc: "Master Python programming from absolute ground zero. Learn backend scripting logic structures, algorithms, object-oriented concepts, and clean production architecture optimization frameworks standard across elite tech teams.",
+                hours: "48 hours of comprehensive instruction",
+                objectives: ["Write robust backend operational algorithms", "Work fluently with standard file automation scripts", "Understand baseline data structuring methods", "Implement OOP architectures efficiently"]
             },
             "ai-fundamentals": {
-                title: "AI & Machine Learning Fundamentals",
+                title: "AI Fundamentals: Your First Neural Network",
+                instructor: "talim.com Team",
                 price: "NPR 8,500",
                 oldPrice: "NPR 12,000",
-                rating: "4.9",
-                students: "4,500+",
+                rating: "4.8",
+                students: "8920",
                 image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-                desc: "Master the foundations of Artificial Intelligence and Machine Learning in this comprehensive, project-based course designed for the modern tech landscape in Nepal. From understanding neural networks to deploying your first predictive model, we cover the end-to-end journey of data science.",
-                hours: "40+ hours of live sessions",
-                objectives: ["Master Python for Data Science and ML", "Understand Supervised & Unsupervised Learning", "Build Neural Networks with TensorFlow", "Implement NLP and Computer Vision models", "Deploy models using Docker and FastAPI", "Data cleaning and visualization techniques"]
+                video: "https://www.w3schools.com/html/movie.mp4",
+                desc: "Master the foundations of Artificial Intelligence and Machine Learning. From understanding classic mathematical mechanics to coding baseline mathematical configurations using TensorFlow, discover how data models make logical classifications.",
+                hours: "32 hours of interactive learning blocks",
+                objectives: ["Understand supervised & unsupervised model mechanics", "Build neural network layers from scratch", "Clean complex operational training datasets", "Deploy basic predictive logic nodes"]
+            },
+            "seo-strategies": {
+                title: "Advanced SEO Strategies For Teams",
+                instructor: "Broadway Infosys",
+                price: "NPR 2,000",
+                oldPrice: "NPR 5,000",
+                rating: "4.7",
+                students: "5400",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                video: "https://www.w3schools.com/html/mov_bbb.mp4",
+                desc: "Elevate your enterprise rank positions across search engine parameters. Learn indexing pipelines, dynamic keyword data mappings, programmatic speed enhancements, and technical architecture configuration optimizations for cross-functional teams.",
+                hours: "24 hours of technical strategy coaching",
+                objectives: ["Configure crawling and indexing priority configurations", "Analyze competitive traffic patterns accurately", "Execute structured technical schema markups", "Scale content planning architectures gracefully"]
+            },
+            "uiux-masterclass": {
+                title: "UI/UX Design Masterclass",
+                instructor: "talim.com Team",
+                price: "NPR 1,800",
+                oldPrice: "NPR 4,500",
+                rating: "4.9",
+                students: "15200",
+                image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80",
+                video: "https://www.w3schools.com/html/movie.mp4",
+                desc: "Deep dive into visual interaction hierarchies, design systems, modern typography standards, wireframe validation tracking, testing modules, and pixel-perfect high-fidelity interface prototyping setups inside modern collaboration ecosystems.",
+                hours: "60 hours of interface layout labs",
+                objectives: ["Create production-grade dynamic design systems", "Conduct rigorous interactive user testing validations", "Master wireframe state workflow transitions", "Deliver responsive viewport asset sheets cleanly"]
+            },
+            "fullstack-javascript": {
+                title: "Full Stack JavaScript: Modern Stack",
+                instructor: "Web Devs Group",
+                price: "NPR 2,700",
+                oldPrice: "NPR 7,500",
+                rating: "4.8",
+                students: "22100",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+                video: "https://www.w3schools.com/html/mov_bbb.mp4",
+                desc: "Become a proficient, self-contained cloud application engineer. Cover reactive visual client mechanics, asynchronous logical data systems, non-relational storage architectures, validation configurations, and server deployments.",
+                hours: "120 hours of end-to-end cloud development",
+                objectives: ["Build single-page web interfaces efficiently", "Establish RESTful logical route APIs safely", "Integrate non-relational database operations", "Deploy operational builds to automated cloud systems"]
+            },
+            "blockchain-solidity": {
+                title: "Solidity & Smart Contracts Mastery",
+                instructor: "Core Engineers",
+                price: "NPR 3,000",
+                oldPrice: "NPR 9,000",
+                rating: "4.6",
+                students: "2800",
+                image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+                video: "https://www.w3schools.com/html/movie.mp4",
+                desc: "Unlock cryptography transaction capabilities. Program gas-optimized logic rules, execute programmatic parameter validations, compile secure protocol blocks, map variable dependencies, and defend against vector exploits.",
+                hours: "40 hours of advanced cryptographic coding",
+                objectives: ["Author compilation contracts using modern Solidity syntax", "Mitigate critical security reentrancy exploits", "Optimize gas spending metrics inside functions", "Deploy scripts onto functional sandbox networks"]
             }
         };
 
-        // Extraction parameters processing engine logic handles parsing
         const urlParams = new URLSearchParams(window.location.search);
-        const courseKey = urlParams.get('course') || 'ai-fundamentals'; // Default backup rendering key fallback
+        const courseKey = urlParams.get('course') || 'ai-fundamentals'; 
         const selectedData = courseDatabase[courseKey];
 
         if (selectedData) {
             document.getElementById('course-title').innerText = selectedData.title;
             document.getElementById('breadcrumb-current').innerText = selectedData.title;
+            document.getElementById('course-instructor').innerText = selectedData.instructor;
             document.getElementById('course-rating').innerText = selectedData.rating;
-            document.getElementById('course-students').innerText = selectedData.students;
+            document.getElementById('course-students').innerText = Number(selectedData.students).toLocaleString();
             document.getElementById('course-cover').src = selectedData.image;
             document.getElementById('course-description').innerText = selectedData.desc;
             document.getElementById('panel-price').innerText = selectedData.price;
             document.getElementById('panel-old-price').innerText = selectedData.oldPrice;
             document.getElementById('inc-hours').innerText = selectedData.hours;
 
+            // Inject video url path resource destination
+            document.getElementById('course-main-video').src = selectedData.video || "https://www.w3schools.com/html/movie.mp4";
+
+            document.getElementById('modal-summary-title').innerText = selectedData.title;
+            document.getElementById('modal-summary-price').innerText = selectedData.price;
+
             const objectiveList = document.getElementById('learning-objectives');
             objectiveList.innerHTML = "";
             selectedData.objectives.forEach(text => {
-                objectiveList.innerHTML += `<li><i class="fa-regular fa-circle-check"></i> ${text}</li>`;
+                objectiveList.innerHTML += `<li><i class="fa-regular fa-circle-check"></i> <span>${text}</span></li>`;
             });
+        } else {
+            document.getElementById('course-title').innerText = "Course Profile Not Found";
         }
+
+        // Active Inline Video Playback Controls Logic
+        const previewBoxContainer = document.getElementById('preview-box-container');
+        const triggerPlayVideo = document.getElementById('trigger-play-video');
+        const courseMainVideo = document.getElementById('course-main-video');
+
+        triggerPlayVideo.addEventListener('click', () => {
+            previewBoxContainer.classList.add('playing'); // Applies CSS to clean down metadata overlays
+            courseMainVideo.play(); // Direct native video initialization command
+        });
+
+        // Modal Elements Reference Mapping
+        const enrollmentModal = document.getElementById('enrollment-modal');
+        const successModal = document.getElementById('success-modal');
+        
+        const openEnrollBtn = document.getElementById('open-enroll-modal');
+        const closeEnrollBtn = document.getElementById('close-enroll-modal');
+        const enrollForm = document.getElementById('enroll-form');
+        const closeSuccessBtn = document.getElementById('btn-success-close');
+
+        // Toggle Form Modal Interface Visibility
+        openEnrollBtn.addEventListener('click', () => enrollmentModal.classList.add('active'));
+        closeEnrollBtn.addEventListener('click', () => enrollmentModal.classList.remove('active'));
+
+        // Form Submit interception logic pipeline
+        enrollForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            enrollmentModal.classList.remove('active'); 
+            successModal.classList.add('active'); 
+        });
+
+        // Redirect when Success notification card call-to-action button fires
+        closeSuccessBtn.addEventListener('click', () => {
+            window.location.href = "dashboard.html";
+        });
+
+        // Close form if student clicks away into safe blur canvas zones
+        window.addEventListener('click', (e) => {
+            if (e.target === enrollmentModal) enrollmentModal.classList.remove('active');
+        });
     </script>
 </body>
 </html>
+
