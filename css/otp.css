@@ -2,12 +2,16 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
 .navbar {
   background-color: #FFFFFF;
   border-bottom: 1px solid #CBD5E1;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   min-height: 90px;
   display: flex;
   align-items: center;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
 .container {
@@ -29,6 +33,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
 .logo_image {
   background-image: url('../assets/tfnd.sd.png');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
   width: 180px;
@@ -60,6 +65,12 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+}
+
+.otp-logo {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0 0;
 }
 
 .btn-login {
