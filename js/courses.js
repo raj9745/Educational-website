@@ -12,7 +12,8 @@ function updateCount(visibleCount) {
 
 function applyFilter() {
   let visibleCount = 0;
-
+//  checks the category and shows the courses according to the category and also counts the number 
+// of visible courses and shows the count in the header section
   cards.forEach((card) => {
     const category = card.dataset.category || '';
     const isVisible = activeCategory === 'All' || category === activeCategory;
@@ -29,6 +30,8 @@ function applyFilter() {
 
   updateCount(visibleCount);
 }
+// adds click event listeners to the category buttons and updates the active category and 
+// applies the filter when a button is clicked
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {

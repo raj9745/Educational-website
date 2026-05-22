@@ -69,8 +69,10 @@ const courseDatabase = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Extract course key from URL and populate course details
     const urlParams = new URLSearchParams(window.location.search);
     const courseKey = urlParams.get('course') || 'python';
+    //JavaScript finds the matching course from the database.
     const selectedData = courseDatabase[courseKey];
 
     if (selectedData) {
