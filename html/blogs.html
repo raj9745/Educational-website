@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="../css/style_home.css">
   <link rel="stylesheet" href="../css/blogs.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
   <header class="navbar">
@@ -23,8 +24,6 @@
         <a href="course.html">Courses</a>
         <a href="blogs.html" class="active">Blogs</a>
         <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
         <a href="signed_up_user.html">Account</a>
       </nav>
       <div class="nav-actions">
@@ -39,7 +38,7 @@
       <div class="blog-hero-text">
         <span class="section-tagline">BLOG & INSIGHTS</span>
         <h1>Weekly ideas to level up your tech career</h1>
-        <p class="hero-desc">Actionable guides, student stories, and industry trends curated by Talim mentors.</p>
+        <p class="hero-desc">Practical guides, student stories, and industry trends curated by Talim mentors. Start with one article and move naturally to the next.</p>
         <div class="search-box blog-search">
           <input id="blog-search" type="text" placeholder="Search articles, topics, or authors">
           <button id="blog-search-btn" class="btn-primary" type="button">Search</button>
@@ -82,7 +81,7 @@
       </div>
 
       <div id="latest-articles" class="blog-grid">
-        <article class="blog-card" data-category="Programming" data-article-id="python-projects">
+        <article class="blog-card" id="python-projects" data-category="Programming" data-article-id="python-projects">
           <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="Programming">
           <div class="card-body">
             <span class="post-tag">Programming</span>
@@ -96,9 +95,10 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#ux-research">Next read: UX research methods</a>
           </div>
         </article>
-        <article class="blog-card" data-category="Design" data-article-id="ux-research">
+        <article class="blog-card" id="ux-research" data-category="Design" data-article-id="ux-research">
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Design">
           <div class="card-body">
             <span class="post-tag">Design</span>
@@ -112,9 +112,10 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#ai-tools">Next read: AI tools students should try</a>
           </div>
         </article>
-        <article class="blog-card" data-category="AI" data-article-id="ai-tools">
+        <article class="blog-card" id="ai-tools" data-category="AI" data-article-id="ai-tools">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="AI">
           <div class="card-body">
             <span class="post-tag">AI</span>
@@ -128,9 +129,10 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#seo-foundations">Next read: SEO foundations</a>
           </div>
         </article>
-        <article class="blog-card" data-category="Marketing" data-article-id="seo-foundations">
+        <article class="blog-card" id="seo-foundations" data-category="Marketing" data-article-id="seo-foundations">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Marketing">
           <div class="card-body">
             <span class="post-tag">Marketing</span>
@@ -144,9 +146,10 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#interview-prep">Next read: Interview prep checklist</a>
           </div>
         </article>
-        <article class="blog-card" data-category="Career" data-article-id="interview-prep">
+        <article class="blog-card" id="interview-prep" data-category="Career" data-article-id="interview-prep">
           <img src="../assets/interview-prep-check.jpg" alt="Career">
           <div class="card-body">
             <span class="post-tag">Career</span>
@@ -160,9 +163,10 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#github-profile">Next read: Clean GitHub profile</a>
           </div>
         </article>
-        <article class="blog-card" data-category="Programming" data-article-id="github-profile">
+        <article class="blog-card" id="github-profile" data-category="Programming" data-article-id="github-profile">
           <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&w=800&q=80" alt="Profile">
           <div class="card-body">
             <span class="post-tag">Programming</span>
@@ -176,6 +180,7 @@
               <a class="btn-secondary" href="course.html">Start learning</a>
               <button class="save-btn" type="button" data-save>Save</button>
             </div>
+            <a class="blog-next-link" href="#python-projects">Back to first article</a>
           </div>
         </article>
       </div>
@@ -212,37 +217,21 @@
 
     </div>
 
-    <p id="errorMessage" style="color:red;"></p>
+    <p id="errorMessage" class="error-message-red"></p>
 
   </div>
 </section>
 
 <!-- Popup -->
-<div
-  id="popup"
-  style="
-    display:none;
-    position:fixed;
-    top:30%;
-    left:40%;
-    padding:20px;
-    background:white;
-    border:1px solid #ccc;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-  "
->
+<div id="popup" class="newsletter-popup">
 
   <p id="popupText"></p>
 
-  <button onclick="closePopup()">
+  <button type="button" onclick="closePopup()">
     Close
   </button>
 
 </div>
-
-<!-- EmailJS CDN -->
-/script>
 
   <div class="pre-footer-stats">
     <div class="container inline-stats">
@@ -280,7 +269,7 @@
           <input type="email" id="footerEmailInput" placeholder="Your email address">
           <button type="button" id="footerJoinBtn">Join</button>
         </div>
-        <p id="footerNewsletterMessage" style="margin-top:10px;color:#fff;"></p>
+        <p id="footerNewsletterMessage" class="newsletter-popup-message"></p>
         </div>
       </div>
 
@@ -296,8 +285,6 @@
       </div>
     </div>
   </footer>
-<!-- email CDN -->
- 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <script src="../js/blogs.js"></script>

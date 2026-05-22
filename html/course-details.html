@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=600&family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/course-details.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
 
@@ -122,9 +123,9 @@
             <div class="footer-bottom">
                 <span>&copy; 2026 Talim.com. All engineering rights reserved.</span>
                 <div class="footer-socials">
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -132,7 +133,7 @@
 
     <div class="modal-overlay" id="enrollment-modal">
         <div class="enroll-modal-card">
-            <button class="modal-close-btn" id="close-enroll-modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="modal-close-btn" id="close-enroll-modal" type="button" aria-label="Close enrollment modal" title="Close enrollment modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-header">
                 <h2>Course Enrollment</h2>
                 <p>Complete your details to access the premium student dashboard environment.</p>

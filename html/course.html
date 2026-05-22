@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/course_style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
 
@@ -35,32 +36,18 @@
     </header>
 
     <section class="course-hero-header">
-        <div class="container">
-            <h1>Level Up Your Career with Nepal's<br>Top Tech Courses</h1>
-            <p>Discover professional-grade curriculum designed to take you from beginner to expert in today's most in-demand technical fields.</p>
-        </div>
-    </section>
-
-    <section class="courses-display-section">
-        <div class="container">
-            
-            <div class="filter-tabs-row">
-                <button class="tab-btn active" data-category="All">All categories</button>
-                <button class="tab-btn" data-category="AI">AI</button>
-                <button class="tab-btn" data-category="Programming">Programming</button>
-                <button class="tab-btn" data-category="Digital Marketing">Digital Marketing</button>
-                <button class="tab-btn" data-category="Design">Design</button>
-                <button class="tab-btn" data-category="Blockchain">Blockchain</button>
+            <nav class="nav-links">
+                <a href="dashboard.html">Home</a>
+                <a href="course.html" class="active">Courses</a>
+                <a href="blogs.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="signed_up_user.html">Account</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-primary">Get Started</a>
             </div>
-
-            <div class="course-status">
-                <span id="course-count">Showing 6 courses</span>
-            </div>
-
-            <div class="course-grid">
-                <div class="course-card" data-category="Programming">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80" alt="Programming">
                         <span class="card-tag tag-blue">Programming</span>
                     </div>
                     <div class="card-content">

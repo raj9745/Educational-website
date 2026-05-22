@@ -100,48 +100,30 @@ saveButtons.forEach((button) => {
 syncSavedState();
 applyFilters();
 
-
-// / popup the email whenever the user enter emails and susbribe the courses 
-function suscribe(){
-    const email = document.getElementById('emailInput').value;
-    const error = document.getElementById("errorMessage");
-    if(email.trim()===''){
-        error.innerText ="please enter your email"
-    return;
-    }
-    error.innerText = "";
-    const popup = document.getElementById('popupText');
-    popup.innertext= `Thank you for subscribing with ${email}! You'll receive weekly updates.`;
-    document.getElementById('popup').style.display = 'block';
-}
-
-// popup message for the user when they click on the subscribe button
-  // ================================
-  // EmailJS Configuration
-  // ================================
+// ================================
+// EmailJS Configuration
+// ================================
   const EMAILJS_CONFIG = {
     publicKey: "fe5Kh-Q74vquPL5dn",
     serviceId: "service_h7gz6zi",
     templateId: "template_qe663dp"
   };
 
-  // ================================
-  // DOM Elements
-  // ================================
+// ================================
+// DOM Elements
+// ================================
   const emailInput   = document.getElementById("emailInput");
   const errorMessage = document.getElementById("errorMessage");
   const popupBox     = document.getElementById("popup");
   const popupText    = document.getElementById("popupText");
 
-  // ================================
-  // Initialize EmailJS
-  // ================================
-  emailjs.init(EMAILJS_CONFIG.publicKey);
 
-  // ================================
-  // Subscribe Function
-  // ================================
-  async function subscribe() {
+// Initialize EmailJS
+emailjs.init(EMAILJS_CONFIG.publicKey);
+
+
+// Subscribe Function
+async function subscribe() {
 
     const email = emailInput.value.trim();
 
@@ -183,55 +165,52 @@ function suscribe(){
       );
 
     }
-  }
+}
 
-  // ================================
-  // Email Validation
-  // ================================
-  function isValidEmail(email) {
+
+// Email Validation
+function isValidEmail(email) {
 
     const emailRegex =
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return emailRegex.test(email);
-  }
-
-  // ================================
-  // Show Error Message
-  // ================================
-  function showError(message) {
+}
+ 
+// Show Error Message
+function showError(message) {
 
     errorMessage.textContent = message;
-  }
+}
 
-  // ================================
-  // Clear Error Message
-  // ================================
-  function clearError() {
+// ================================
+// Clear Error Message
+// ================================
+function clearError() {
 
     errorMessage.textContent = "";
-  }
+}
 
-  // ================================
-  // Success Popup
-  // ================================
-  function showSuccessPopup(email) {
+// ================================
+// Success Popup
+// ================================
+function showSuccessPopup(email) {
 
     popupText.textContent =
       `Thank you for subscribing with ${email}! You'll receive weekly updates.`;
 
     popupBox.style.display = "block";
-  }
+}
 
-  // ================================
-  // Close Popup
-  // ================================
-  function closePopup() {
+// ================================
+// Close Popup
+// ================================
+function closePopup() {
 
     popupBox.style.display = "none";
-  }
+}
 
-   // ===== Footer Newsletter Subscribe =====
+// ===== Footer Newsletter Subscribe =====
 const footerEmailInput = document.getElementById("footerEmailInput");
 const footerJoinButton = document.getElementById("footerJoinBtn");
 const footerNewsletterMessage = document.getElementById("footerNewsletterMessage");

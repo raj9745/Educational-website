@@ -207,6 +207,18 @@ body {
     gap: 10px;
 }
 
+.blog-next-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #034694;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.blog-next-link:hover {
+    text-decoration: underline;
+}
+
 .btn-secondary {
     border: 1px solid #E2E8F0;
     background: #ffffff;

@@ -6,6 +6,7 @@
     <title>Sign In | EduLearn</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style_login.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
     <main class="login-page">
@@ -23,9 +24,9 @@
                 </div>
                 <div class="input-group">
                     <label>Password</label>
-                    <div style="position:relative">
+                    <div class="relative-field">
                         <input id="loginPassword" type="password" placeholder="••••••••" required>
-                        <button type="button" id="toggleLoginPassword" aria-label="Show password" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer">Show</button>
+                        <button type="button" id="toggleLoginPassword" aria-label="Show password" class="password-toggle-btn">Show</button>
                     </div>
                 </div>
                 <button type="submit" class="btn-primary">Sign In</button>
