@@ -28,8 +28,12 @@
         <a href="../html/signed_up_user.html">Account</a>
       </nav>
       <div class="nav-actions">
-        <a href="../html/login.html" class="btn-login">Login</a>
-        <a href="../html/register.html" class="btn-primary">Get Started</a>
+        <a href="../html/login.html" class="btn-login" data-auth-role="login">Login</a>
+        <a href="../html/register.html" class="btn-primary" data-auth-role="get-started">Get Started</a>
+
+        <span id="userGreeting" class="dashboard-user"></span>
+        <a href="../html/signed_up_user.html" class="btn-secondary" data-auth-role="account">Account</a>
+        <button id="signOutBtn" class="btn-secondary" style="display:none;">Sign Out</button>
       </div>
     </div>
   </header>
@@ -219,5 +223,6 @@
   </footer>
 
   <script src="../js/faq.js"></script>
+  <script src="../js/auth-ui.js"></script>
 </body>
 </html>
