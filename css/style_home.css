@@ -672,8 +672,24 @@ h2 {
 }
 
 .navbar .nav-actions .btn-secondary {
+    background: transparent;
+    border: 1px solid #E2E8F0;
+    color: #5A6A85;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
     width: auto;
     align-self: center;
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-actions .btn-secondary:hover {
+    border-color: #034694;
+    color: #034694;
+    background-color: rgba(3, 70, 148, 0.02);
 }
 
 .btn-secondary:hover {

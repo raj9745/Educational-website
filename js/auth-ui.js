@@ -11,7 +11,11 @@
 
   function setHidden(el, hidden) {
     if (!el) return;
-    el.style.display = hidden ? 'none' : '';
+    if (hidden) {
+      el.classList.add('hidden');
+    } else {
+      el.classList.remove('hidden');
+    }
   }
 
   window.TalimAuthUI = {

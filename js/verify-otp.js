@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
       sessionStorage.removeItem('registrationOTP');
       sessionStorage.removeItem('registrationData');
 
-      alert('OTP verified! Redirecting to dashboard...');
-      window.location.href = 'dashboard.html';
+      alert('OTP verified! Redirecting to login...');
+      window.location.href = 'login.html';
     } else {
       alert('Incorrect OTP. Please try again.');
     }
