@@ -17,37 +17,45 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
+                <a href="../html/dashboard.html" class="logo_image" role="img" aria-label="Talim Logo"></a>
             </div>
             <nav class="nav-links">
-                <a href="dashboard.html">Home</a>
-                <a href="course.html" class="active">Courses</a>
-                <a href="blogs.html">Blogs</a>
-                <a href="about.html">About</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
-                <a href="signed_up_user.html">Account</a>
+                <a href="../html/dashboard.html">Home</a>
+                <a href="../html/course.html" class="active">Courses</a>
+                <a href="../html/blogs.html">Blogs</a>
+                <a href="../html/about.html">About</a>
+                <a href="../html/faq.html">FAQ</a>
+                <a href="../html/contact.html">Contact</a>
+                <a href="../html/signed_up_user.html">Account</a>
             </nav>
             <div class="nav-actions">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-primary">Get Started</a>
+                <a href="../html/login.html" class="btn-login">Login</a>
+                <a href="../html/register.html" class="btn-primary">Get Started</a>
             </div>
         </div>
     </header>
 
     <section class="course-hero-header">
-            <nav class="nav-links">
-                <a href="dashboard.html">Home</a>
-                <a href="course.html" class="active">Courses</a>
-                <a href="blogs.html">Blog</a>
-                <a href="faq.html">FAQ</a>
-                <a href="about.html">About</a>
-                <a href="signed_up_user.html">Account</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-primary">Get Started</a>
+        <div class="container">
+            <h1>Explore Our Courses</h1>
+            <p>Choose from 340+ expert-led courses and start your learning journey today</p>
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-category="All">All Courses</button>
+                <button class="tab-btn" data-category="Programming">Programming</button>
+                <button class="tab-btn" data-category="Design">Design</button>
+                <button class="tab-btn" data-category="AI">AI & ML</button>
+                <button class="tab-btn" data-category="Digital Marketing">Marketing</button>
+                <button class="tab-btn" data-category="Blockchain">Blockchain</button>
             </div>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="container">
+            <div class="course-grid" id="course-grid">
+                <div class="course-card" data-category="Programming">
+                    <div class="card-img-wrapper">
+                        <img src="../assets/stack.jpg" alt="Python">
                         <span class="card-tag tag-blue">Programming</span>
                     </div>
                     <div class="card-content">
@@ -60,7 +68,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 1,000</span>
-                            <a href="course-details.html?course=python" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=python" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +88,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 8,500</span>
-                            <a href="course-details.html?course=ai-fundamentals" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=ai-fundamentals" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +108,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 2,000</span>
-                            <a href="course-details.html?course=seo-strategies" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=seo-strategies" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +128,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 1,800</span>
-                            <a href="course-details.html?course=uiux-masterclass" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=uiux-masterclass" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +148,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 2,700</span>
-                            <a href="course-details.html?course=fullstack-javascript" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=fullstack-javascript" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +168,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="price">NPR 3,000</span>
-                            <a href="course-details.html?course=blockchain-solidity" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="../html/course-details.html?course=blockchain-solidity" class="btn-card">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
