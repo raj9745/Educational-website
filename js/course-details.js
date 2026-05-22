@@ -68,13 +68,15 @@ const courseDatabase = {
     }
 };
 
+// JavaScript for course details page
 document.addEventListener('DOMContentLoaded', () => {
     // Extract course key from URL and populate course details
     const urlParams = new URLSearchParams(window.location.search);
     const courseKey = urlParams.get('course') || 'python';
     //JavaScript finds the matching course from the database.
     const selectedData = courseDatabase[courseKey];
-
+// If a matching course is found, it populates the course details section with the relevant information.
+//  If no match is found, it displays a "Course Profile Not Found" message.
     if (selectedData) {
         document.getElementById('course-title').innerText = selectedData.title;
         document.getElementById('breadcrumb-current').innerText = selectedData.title;
