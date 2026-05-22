@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    <!-- Main navigation bar -->
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -43,6 +44,7 @@
         <div class="container">
             <h1>Explore Our Courses</h1>
             <p>Choose from 340+ expert-led courses and start your learning journey today</p>
+            <!-- Category filter tabs -->
             <div class="filter-tabs">
                 <button class="tab-btn active" data-category="All">All Courses</button>
                 <button class="tab-btn" data-category="Programming">Programming</button>
@@ -56,6 +58,7 @@
 
     <section class="courses-section">
         <div class="container">
+            <!-- Course cards list; each card uses data-category for filtering -->
             <div class="course-grid" id="course-grid">
                 <div class="course-card" data-category="Programming">
                     <div class="card-img-wrapper">
@@ -177,6 +180,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Shown when there are no matching courses for the active category -->
             <div id="course-empty" class="course-empty">No courses match this category.</div>
 
         </div>

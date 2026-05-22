@@ -40,12 +40,14 @@
 
     <main class="container detail-layout">
         <div class="main-info-column">
+            <!-- Breadcrumb trail (current course title is filled by JS) -->
             <nav class="breadcrumb">
                 <a href="dashboard.html">Home</a> &gt; <a href="course.html">Courses</a> &gt; <span id="breadcrumb-current">Loading Course...</span>
             </nav>
 
             <h1 id="course-title">Loading Title...</h1>
-            
+
+            <!-- Quick stats filled by JS: instructor, rating, students -->
             <div class="course-quick-stats">
                 <span id="course-instructor-wrapper">
                     <i class="fa-solid fa-chalkboard-user"></i> <span id="course-instructor">Loading...</span>
@@ -54,12 +56,14 @@
                 <span class="student-count"><i class="fa-solid fa-user-group"></i> <span id="course-students">0</span> Students enrolled</span>
             </div>
 
+            <!-- Video preview (click play overlay to start) -->
             <div class="video-preview-box" id="preview-box-container">
                 <img id="course-cover" src="" alt="Course Cover Placeholder">
                 <div class="play-overlay-btn" id="trigger-play-video"><i class="fa-solid fa-circle-play"></i></div>
                 <video id="course-main-video" controls src="../assets/coding.mp4"></video>
             </div>
 
+            <!-- Course description (loaded from courseDatabase in course-details.js) -->
             <section class="info-card">
                 <h2>About Course</h2>
                 <p id="course-description">Loading course description parameters...</p>

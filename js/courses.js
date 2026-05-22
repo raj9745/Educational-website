@@ -5,16 +5,29 @@ const emptyState = document.getElementById('course-empty');
 
 let activeCategory = 'All';
 
+// Updates the small “showing courses” count label in the header.
 function updateCount(visibleCount) {
   if (!countNode) return;
   countNode.textContent = `Showing ${visibleCount} course${visibleCount === 1 ? '' : 's'}`;
 }
 
+// Applies the category filter and toggles course card visibility.
 function applyFilter() {
   let visibleCount = 0;
-//  checks the category and shows the courses according to the category and also counts the number 
-// of visible courses and shows the count in the header section
+
   cards.forEach((card) => {
+    // Each card declares its category via a data attribute.
+    // If the active category is “All”, all cards are visible.
+    
+    // NOTE: If the DOM doesn’t include #course-empty, the page still works.
+    
+    // Checks the category and shows the courses according to the category.
+    // Also counts the number of visible courses.
+    
+    // Shows the count in the header section (via updateCount).
+    
+    
+    // ----
     const category = card.dataset.category || '';
     const isVisible = activeCategory === 'All' || category === activeCategory;
     card.style.display = isVisible ? 'block' : 'none';
@@ -30,9 +43,8 @@ function applyFilter() {
 
   updateCount(visibleCount);
 }
-// adds click event listeners to the category buttons and updates the active category and 
-// applies the filter when a button is clicked
 
+// Adds click event listeners for each filter tab and re-runs the filter.
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
     tabs.forEach((btn) => btn.classList.remove('active'));
@@ -42,6 +54,6 @@ tabs.forEach((tab) => {
   });
 });
 
+// Initialize the UI based on the default active category.
 applyFilter();
 
-// popup the email whenever the user enter emails and susbribe the coruses 

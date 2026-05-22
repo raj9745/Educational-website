@@ -1,4 +1,4 @@
-// Extracted JS from html/course-details.html
+// Course data source + UI logic for course-details.html
 const courseDatabase = {
     "python": {
         title: "Mastering Python: From Basics to Advanced",
@@ -68,15 +68,16 @@ const courseDatabase = {
     }
 };
 
-// JavaScript for course details page
+// Course details page logic.
 document.addEventListener('DOMContentLoaded', () => {
-    // Extract course key from URL and populate course details
+    // Extract course key from the URL query string (e.g., ?course=python)
     const urlParams = new URLSearchParams(window.location.search);
     const courseKey = urlParams.get('course') || 'python';
-    //JavaScript finds the matching course from the database.
+
+    // Find the matching course from the in-file database.
     const selectedData = courseDatabase[courseKey];
-// If a matching course is found, it populates the course details section with the relevant information.
-//  If no match is found, it displays a "Course Profile Not Found" message.
+
+    // Populate the course details section; show a fallback message if not found.
     if (selectedData) {
         document.getElementById('course-title').innerText = selectedData.title;
         document.getElementById('breadcrumb-current').innerText = selectedData.title;

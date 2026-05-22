@@ -53,10 +53,12 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Only run if page opted in by providing any auth UI markers.
+    // Run only on pages that include auth UI elements.
     const hasMarkers =
-      document.querySelector('[data-auth-role="login"], [data-auth-role="get-started"], [data-auth-role="account"], #signOutBtn, #userGreeting') ||
-      false;
+      document.querySelector(
+        '[data-auth-role="login"], [data-auth-role="get-started"], [data-auth-role="account"], #signOutBtn, #userGreeting'
+      ) || false;
+
     if (hasMarkers) window.TalimAuthUI.init();
   });
 })();
