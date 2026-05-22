@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Apply corporate tracking template context strings
     const popMarkup = `
         <div style="font-family: 'Plus Jakarta Sans', sans-serif; padding: 4px; min-width: 140px;">
-            <h5 style="margin: 0 0 2px 0; color: #011E41; font-weight: 700; font-size: 13px;">Talim Node Base</h5>
+            <h5 style="margin: 0 0 2px 0; color: #011E41; font-weight: 700; font-size: 13px;">Talim.com location</h5>
             <p style="margin: 0; color: #5A6A85; font-size: 11px; line-height: 1.3;">LBEF Campus Hub Cluster.</p>
         </div>
     `;

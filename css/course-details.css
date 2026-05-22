@@ -30,28 +30,40 @@ main {
     position: sticky;
     top: 0;
     z-index: 100;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
 }
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 .logo_image {
     display: block;
     background-image: url('../assets/tfnd.sd.png');
     background-size: cover;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
-    width: 300px;
-    height:200px;
+    width: 180px;
+    height: 50px;
     border-radius: 6px;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
 }
 .nav-links a {
     color: #5A6A85;
     text-decoration: none;
     font-weight: 500;
-    margin-right: 28px;
+    white-space: nowrap;
     transition: color 0.2s;
 }
 .nav-links a.active, .nav-links a:hover {
@@ -59,6 +71,7 @@ main {
 }
 .nav-actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 16px;
 }

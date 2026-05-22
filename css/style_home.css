@@ -122,7 +122,7 @@ h2 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 90px;
+    min-height: 80px;
     display: flex;
     align-items: center;
 }
@@ -132,27 +132,36 @@ h2 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .logo_image {
     background-image: url('../assets/tfnd.sd.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: left center;
-    height: 200px;                 
-    width: 350px;                
+    width: 240px;
+    height: 60px;
+    max-height: 60px;
     display: inline-block;
+    min-width: 150px;
 }
+
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-links a {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     color: #5A6A85;
+    white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -161,8 +170,9 @@ h2 {
 
 .nav-actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 28px;
+    gap: 18px;
 }
 
 .btn-login {
@@ -659,6 +669,11 @@ h2 {
     cursor: pointer;
     width: 100%;
     transition: all 0.2s ease;
+}
+
+.navbar .nav-actions .btn-secondary {
+    width: auto;
+    align-self: center;
 }
 
 .btn-secondary:hover {

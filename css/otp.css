@@ -5,7 +5,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 90px;
+  min-height: 90px;
   display: flex;
   align-items: center;
 }
@@ -22,27 +22,32 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .logo_image {
   background-image: url('../assets/tfnd.sd.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: inline-block;
-  width: 220px;
+  width: 180px;
   height: 50px;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-links a {
   font-size: 15px;
   font-weight: 600;
   color: #4B5563;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -52,6 +57,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient
 
 .nav-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   align-items: center;
 }
