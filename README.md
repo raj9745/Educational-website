@@ -45,7 +45,7 @@ This project is a static educational website with multiple pages (courses, cours
 
 ## How to Run
 Because this is a static site:
-1. Open any HTML file in your browser: The netry point of our code will be `../html/dashb`
+1. Open any HTML file in your browser: The netry point of our code will be `../html/dashbooard.html`
 2. Example (optional):
    - Start a local server from the project root and visit `html/course.html`.
 
