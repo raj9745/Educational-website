@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   togglePassword.addEventListener('click', () => {
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; 
+    // Toggle between password and text
     passwordInput.setAttribute('type', type);
     togglePassword.textContent = type === 'password' ? 'Show' : 'Hide';
-  });
+    // Update button text accordingly
+  }); 
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -25,8 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const users = usersRaw ? JSON.parse(usersRaw) : [];
 
     const user = users.find((u) => u.email === email && u.password === password);
+     // Check if user exists and password matches
     if (!user) {
       alert('Sign in failed. Please make sure your email and password are correct and your account is verified.');
+       // Updated error message
       return;
     }
 

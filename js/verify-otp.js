@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const registration = JSON.parse(registrationRaw);
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function (e) { // Handle OTP verification
     e.preventDefault();
     const entered = otpInput.value.trim();
     const stored = currentOtp();
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Registration success: store user in localStorage (demo)
       const usersRaw = localStorage.getItem('edu_users');
       const users = usersRaw ? JSON.parse(usersRaw) : [];
-      users.push({ name: registration.fullName, email: registration.email, password: registration.password });
+      users.push({ name: registration.fullName, email: registration.email, password: registration.password }); 
+      // In production, never store plain passwords and handle this securely on the server
       localStorage.setItem('edu_users', JSON.stringify(users));
 
       // Cleanup
@@ -76,13 +77,14 @@ document.addEventListener('DOMContentLoaded', function () {
     resendBtn.textContent = 'Resending...';
 
     if (!window.emailjs) {
-      alert('EmailJS not available. Initialize SDK and replace placeholders.');
+      alert('EmailJS not available. Initialize SDK and replace placeholders.'); 
+      // Provide guidance for missing EmailJS
       resendBtn.disabled = false;
       resendBtn.textContent = 'Resend OTP';
       return;
     }
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams) // Replace with your EmailJS service and template IDs
       .then(() => {
         alert('OTP resent to ' + registration.email);
         resendBtn.disabled = false;
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch((err) => {
         console.error('EmailJS error:', err);
         const errorText = err && err.text ? err.text : JSON.stringify(err);
-        alert('Failed to resend OTP. Details logged to console.\n' + errorText);
+        alert('Failed to resend OTP. Details logged to console.\n' + errorText); // Provide more error details
         resendBtn.disabled = false;
         resendBtn.textContent = 'Resend OTP';
       });
